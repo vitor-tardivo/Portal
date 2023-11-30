@@ -1,0 +1,66 @@
+@charset "UTF-8"; /* KEYBOARD CODE OF THE STYLIZATIONS CODE */
+
+/* ABBR STYLIZATION */
+abbr {
+    text-decoration: none;
+}
+/* A STYLIZATION */
+a {
+    text-decoration: none;
+}
+
+/* FOOTER STYLIZATION */
+footer {
+    display: block;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: var(--colorContrastOpacity);
+    border-top: 2px solid var(--colorBlack);
+    box-shadow: -2px -2px 10px var(--colorShadow);
+    font-size: 1.2vw;
+    padding: 7px;
+    text-align: center;
+    z-index: 1000;
+    transition: 0.3s;
+}
+/* CREDITS STYLIZATION */
+#by {
+    color: var(--colorWhite);
+    padding: 7px 0px 0px 0px;
+    font-family: var(--fontDisplay);
+    user-select: none
+}
+#lOuKo {
+    font-family: 'Borel', cursive;
+    padding: 7px 0px 0px 0px;
+}
+#linklOuKo {
+    text-decoration: none;
+    outline: 1px solid rgba(0, 0, 0, 0);
+}
+#linklOuKo:focus {
+    outline: 1px solid var(--colorWhite);
+    border-radius: 50px;
+}
+#l {
+    color: red;
+    transition: 0.3s;
+}
+#O {
+    color: blueviolet;
+    transition: 0.3s;
+}
+#u {
+    color: paleturquoise;
+    transition: 0.3s;
+}
+#K {
+    color: gold;
+    transition: 0.3s;
+}
+#o {
+    color: greenyellow;
+    transition: 0.3s;
+}

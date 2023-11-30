@@ -1,0 +1,281 @@
+@charset "UTF-8"; /* KEYBOARD CODE OF THE STYLIZATIONS CODE */
+
+/* FONTS INPORTS */
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime&family=Noto+Sans+Display:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Borel&display=swap');
+
+/* PAGE OR ALL STYLIZATION */
+*, HTML {
+    margin: 0px;
+    padding: 0px;
+}
+
+/* BODY STYLIZATION */
+body { 
+    background-color: rgb(10, 10, 10) /*white*/;
+    transition: 0.3s;
+}
+
+:root { /* CONFIGS STANDARD AND STANDARD */
+    /* FONTS */
+    --fontDisplay: 'Noto Sans Display', sans-serif;
+    --fontMonoSerif: 'Courier Prime', monospace;
+
+    /* COLORS */
+    --colorWhite: rgb(230, 230, 230);
+    --colorBlack: rgb(5, 5, 5);
+    --colorShadow: rgba(0, 0, 0, 0.5);
+    --colorBlue: rgb(30, 30, 170);
+    --colorGreen: rgb(66, 209, 66);
+    --colorRed: rgb(207, 44, 44);
+    --colorContrastOpacity: rgba(20, 20, 20, 0.685);
+    --colorContrast: rgb(20, 20, 20);
+    --colorInteractionElements: rgb(175, 175, 175);
+
+
+    /* CONFIG STANDARD SCROLLBAR */
+    --configScrollbar--webkitscrollbar-width: 16px;
+
+    --configScrollbar--webkitscrollbarthumb-backgroundcolor: rgb(215, 215, 215);
+    --configScrollbar--webkitscrollbarthumb-border: 1px solid  var(--colorBlack);
+    --configScrollbar--webkitscrollbarthumb-borderradius: 50px;
+    --configScrollbar--webkitscrollbarthumb-outline: 1px solid rgba(0, 0, 0, 0);
+    
+    --configScrollbar--webkitscrollbarthumbhover-backgroundcolor: var(--colorInteractionElements);
+    --configScrollbar--webkitscrollbarthumbhover-transition: 0.3s;
+
+    --configScrollbar--webkitscrollbarthumbactive-backgroundcolor: rgb(140, 140, 140);
+    --configScrollbar--webkitscrollbarthumbactive-transition: 0.3s;
+
+    --configScrollbar--webkitscrollbarthumbfocus-outline: 1px solid var(--colorWhite);
+    
+    --configScrollbar--scrollbar-scrollbarcolor: var(--colorWhite);
+    
+    --configScrollbar--webkitscrollbarcorner-backgroundcolor: var(--colorWhite);
+    --configScrollbar--webkitscrollbarcorner-borderradius: 50px;
+
+
+    /* CONFIG STANDARD LOADING BAR */
+    --configBarLoading-position: fixed;
+    --configBarLoading-top: 0px;
+    --configBarLoading-left: 0px;
+    --configBarLoading-zindex: 9999;
+    --configBarLoading-backgroundcolor: var(--colorWhite);
+    --configBarLoading-height: 3px;
+    --configBarLoading-transition: 0.3s;
+    --configBarLoading-animation: blink 0.3s linear infinite;
+
+
+    --configHeader-display: flex;
+    --configHeader-flexwrap: wrap;
+    --configHeader-justifycontent: space-between;
+    --configHeader-alignitems: center;
+    --configHeader-backgroundcolor: var(--colorContrast);
+    --configHeader-borderbottom: 2px solid var(--colorBlack);
+    --configHeader-boxshadow: 2px 2px 10px var(--colorShadow);
+    --configHeader-fontsize: 1.2vw;
+    --configHeader-marginbottom: 40px;
+    --configHeader-padding: 20px;
+    --configHeader-transition: 0.3s;
+    
+    --configHeader--home-fontfamily: var(--fontDisplay);
+    --configHeader--home-color: var(--colorWhite);
+    --configHeader--home-outline: 1px solid rgba(0, 0, 0, 0);
+    --configHeader--home-transition: 0.3s;
+    
+    --configHeader--homehover-color: var(--colorInteractionElements);
+    
+    --configHeader--homeactive-color: var(--colorInteractionElements);
+
+    --configHeader--homefocus-outline: 1px solid var(--colorWhite);
+    --configHeader--homefocus-borderradius: 50px;
+
+    --configHeader--navs-display: block;
+    --configHeader--navs-color: var(--colorWhite);
+    --configHeader--navs-outline: 1px solid rgba(0, 0, 0, 0);
+    --configHeader--navs-margin: 0px 10px 0px 10px;
+    --configHeader--navs-fontfamily: var(--fontDisplay);
+    --configHeader--navs-transition: 0.3s;
+
+    --configHeader--navshover-color: var(--colorInteractionElements);
+
+    --configHeader--navsactiver-color: var(--colorInteractionElements);
+    
+    --configHeader--navsfocus-outline: 1px solid var(--colorWhite);
+    --configHeader--navsfocus-borderradius: 50px;
+
+    --configHeader--ul-display: flex;
+    
+    --configHeader--li-liststyle: none;
+
+
+    /* CONFIG STANDARD BUTTONS */
+    --configButton-borderradius: 50px;
+    --configButton-boxshadow: 2px 2px 6px var(--colorShadow);
+    --configButton-fontweight: bolder;
+    --configButton-fontfamily: var(--fontDisplay);
+
+
+    /* CONFIG STANDARD SCROLL BUTTON */
+    --configButtonScroll--scroll-backgroundcolor: rgba(231, 231, 231, 0.329);
+    --configButtonScroll--scroll-color: var(--colorWhite);
+    --configButtonScroll--scroll-border: 2px solid rgba(5, 5, 5, 0);
+    --configButtonScroll--scroll-borderradius: 50px;
+    --configButtonScroll--scroll-outline: 2px solid rgba(0, 0, 0, 0);
+
+    --configButtonScroll--scrollhover-cursor: pointer;
+    --configButtonScroll--scrollhover-color: var(--colorBlack);
+    
+    --configButtonScroll--scrollactive-color: var(--colorBlack);
+    
+    --configButtonScroll--scrollfocus-border: 2px solid rgba(0, 0, 0, 0);
+    --configButtonScroll--scrollfocus-outline: 2px solid var(--colorWhite);
+}
+/* BLINK BACKGROUND ANIMATION LOADING BAR STYLIZATION */
+@keyframes blink {
+    0% {
+      background-color: var(--colorWhite);
+    }
+    50% {
+      background-color: var(--colorInteractionElements);
+    }
+    100% {
+      background-color: var(--colorWhite);
+    }
+}
+/* BLINK BORDER ANIMATION SAVE ICON STYLIZATION */
+@keyframes borderBlink {
+    0% {
+        border: 2px solid var(--colorWhite);
+    }
+    50% {
+        border: 2px solid var(--colorInteractionElements);
+    }
+    100% {
+        border: 2px solid var(--colorWhite);
+    }
+}
+
+/* SCROLLBAR STYLIZATION */
+*::-webkit-scrollbar {
+    width: var(--configScrollbar--webkitscrollbar-width); 
+}
+*::-webkit-scrollbar-thumb {
+    background-color: var(--configScrollbar--webkitscrollbarthumb-backgroundcolor); 
+    border: var(--configScrollbar--webkitscrollbarthumb-border); 
+    border-radius: var(--configScrollbar--webkitscrollbarthumb-borderradius);
+    outline: var(--configScrollbar--webkitscrollbarthumb-outline);
+}
+*::-webkit-scrollbar-thumb:hover {
+    background-color: var(--configScrollbar--webkitscrollbarthumbhover-backgroundcolor);
+    transition: var(--configScrollbar--webkitscrollbarthumbhover-transition);
+}
+*::-webkit-scrollbar-thumb:active {
+    background-color: var(--configScrollbar--webkitscrollbarthumbactive-backgroundcolor);
+    transition: var(--configScrollbar--webkitscrollbarthumbactive-transition);
+}
+*::-webkit-scrollbar-thumb:focus {
+    outline: var(--configScrollbar--webkitscrollbarthumbfocus-outline);
+}
+*.scrollbar {
+    scrollbar-color: var(--configScrollbar--scrollbar-scrollbarcolor);
+}
+*::-webkit-scrollbar-corner {
+    background-color: var(--configScrollbar--webkitscrollbarcorner-backgroundcolor);
+    border-radius: var(--configScrollbar--webkitscrollbarcorner-borderradius); 
+}
+
+/* LOADING BAR STYLIZATION */
+#barLoading {
+    position: var(--configBarLoading-position);
+    top: var(--configBarLoading-top);
+    left: var(--configBarLoading-left);
+    background-color: var(--configBarLoading-backgroundcolor);
+    height: var(--configBarLoading-height);
+    z-index: var(--configBarLoading-zindex);
+    animation: var(--configBarLoading-animation);
+}
+
+/* HEADER STYLIZATION */
+header {
+    display: var(--configHeader-display);
+    flex-wrap: var(--configHeader-flexwrap);
+    justify-content: var(--configHeader-justifycontent);
+    align-items: var(--configHeader-alignitems);
+    background-color: var(--configHeader-backgroundcolor);
+    border-bottom: var(--configHeader-borderbottom);
+    box-shadow: var(--configHeader-boxshadow);
+    font-size: var(--configHeader-fontsize);
+    margin-bottom: var(--configHeader-marginbottom);
+    padding: var(--configHeader-padding); 
+    transition: var(--configHeader-transition);
+}
+/* NAVIGATION STYLIZATION */
+#home {
+    font-family: var(--configHeader--home-fontfamily);
+    color: var(--configHeader--home-color);
+    outline: var(--configHeader--home-outline);
+    transition: var(--configHeader--home-transition);
+}
+#home:hover {
+    color: var(--configHeader--homehover-color);
+}
+#home:active {
+    color: var(--configHeader--homeactive-color);
+}
+#home:focus {
+    outline: var(--configHeader--homefocus-outline);
+    border-radius: var(--configHeader--homefocus-borderradius);
+}
+.navs {
+    display: var(--configHeader--navs-display);
+    color: var(--configHeader--home-color);
+    outline: var(--configHeader--home-outline);
+    margin: var(--configHeader--navs-margin);
+    font-family: var(--configHeader--home-fontfamily);
+    transition: var(--configHeader--home-transition);
+}
+.navs:hover {
+    color: var(--configHeader--navshover-color);
+}
+.navs:active {
+    color: var(--configHeader--navsactiver-color);
+}
+.navs:focus {
+    outline: var(--configHeader--navsfocus-outline);
+    border-radius: var(--configHeader--homefocus-borderradius);
+}
+ul {
+    display: var(--configHeader--ul-display);
+}
+li {
+    list-style: var(--configHeader--li-liststyle);
+}
+
+/* BUTTONS SEE AND ERASE STYLIZATION */
+#see, #erase, #open {
+    border-radius: var(--configButton-borderradius);
+    box-shadow: var(--configButton-boxshadow);
+    font-weight: var(--configButton-fontweight);
+    font-family: var(--configButton-fontfamily);
+}
+
+/* BUTTONS SCROLL STYLIZATION */
+#scrollB, #scrollT  {
+    background-color: var(--configButtonScroll--scroll-backgroundcolor);
+    color: var(--configButtonScroll--scroll-color);
+    border: var(--configButtonScroll--scroll-border);
+    border-radius: var(--configButtonScroll--scroll-borderradius);
+    outline: var(--configButtonScroll--scroll-outline);
+}
+#scrollB:hover, #scrollT:hover {
+    cursor: var(--configButtonScroll--scrollhover-cursor);
+    color: var(--configButtonScroll--scrollhover-color);
+}
+#scrollB:active, #scrollT:active {
+    color: var(--configButtonScroll--scrollactive-color);
+}
+#scrollB:focus, #scrollT:focus {
+    border: var(--configButtonScroll--scrollfocus-border);
+    outline: var(--configButtonScroll--scrollfocus-outline);
+}

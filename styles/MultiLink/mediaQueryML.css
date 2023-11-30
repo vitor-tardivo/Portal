@@ -1,0 +1,32 @@
+@charset "UTF-8"; /* KEYBOARD CODE OF THE STYLIZATIONS CODE */
+
+@media print /* MEDIA QUERY PRINT */ {
+     
+
+}
+
+@media screen and (max-width: 1050px) /* MEDIA QUERY SMALL SCREENS(phones) */ {
+     header {
+          font-size: 2.7vw;
+     }
+     .navs {
+          margin: 0px 5px 0px 5px;
+          transition: 0.2s;
+     }
+     #home {
+          transition: 0.2s;
+     }
+     #home:hover {
+          color: var(--colorWhite);
+     }
+     #home:active {
+          color: var(--colorInteractionElements);
+     }
+     #home:focus {
+          outline: 1px solid rgba(255, 255, 255, 0);
+     }
+  
+     footer {
+          font-size: 2.7vw;
+     }
+}
