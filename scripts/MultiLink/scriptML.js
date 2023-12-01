@@ -70,14 +70,6 @@ function lOuKoBackColors() {
         'color: greenyellow;'
 }
 
-function showLinks() {
-    let aShowLinks = document.querySelector('aside')
-    let linksElement = document.createElement('p')
-
-    linksElement.textContent = link
-    aShowLinks.appendChild(linksElement)
-}
-
 function openLinks() {
     let areaLinks = document.querySelector('#links')
     let links = areaLinks.value.split('\n')
@@ -90,10 +82,13 @@ function openLinks() {
         let link = links[i].trim()
 
         if (link !== '') {
+            let aShowLinks = document.querySelector('aside')
+            let linksElement = document.createElement('p')
+
+            linksElement.textContent = link
+            aShowLinks.appendChild(linksElement)
+
             window.open(link, '_blank')
-
-            showLinks()
-
         }
         resetLoadingBar()
     }
