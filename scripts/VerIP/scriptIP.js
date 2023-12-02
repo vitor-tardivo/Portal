@@ -1,13 +1,13 @@
-let previousIp = null // VARIABLE PREVIOUS IP
+let previousIp = null// VARIABLE PREVIOUS IP
 
-document.addEventListener('DOMContentLoaded', function () { // LOAD LOCAL STORAGE ITENS INTO LIST ON PAGE LOAD
+document.addEventListener('DOMContentLoaded', function () {// LOAD LOCAL STORAGE ITENS INTO LIST ON PAGE LOAD
     lIp = JSON.parse(localStorage.getItem('ipList')) || []
     renderListIP()
 })
 
-let lIp = [] // VARIABLE LIST
+let lIp = []// VARIABLE LIST
 
-function resetLoadingBar() { // RESET LOADING BAR WORK
+function resetLoadingBar() {// RESET LOADING BAR WORK
     let barL = document.querySelector('#barLoading')
 
     setTimeout(function() {
@@ -20,12 +20,12 @@ function resetLoadingBar() { // RESET LOADING BAR WORK
     }, 300)
 }
 
-window.onscroll = function() { scrollFunction() } // CALL FUNCTION FOR SCROLLS BUTTONS
+window.onscroll = function() { scrollFunction() }// CALL FUNCTION FOR SCROLLS BUTTONS
 
-function scrollFunction() { // SHOW THE SCROLLS BUTTONS AND FOOTER
+function scrollFunction() {// SHOW THE SCROLLS BUTTONS AND FOOTER
     let sBottom = document.querySelector("#scrollB")
     
-    if (document.body.scrollHeight - (window.scrollY + window.innerHeight) < 199) {
+    if (document.body.scrollHeight - (window.scrollY + window.innerHeight) < 200) {
         sBottom.style.cssText =
             'opacity: 0; pointer-events: none; visibility: hidden;'
     } else {
@@ -35,7 +35,7 @@ function scrollFunction() { // SHOW THE SCROLLS BUTTONS AND FOOTER
     
     let sTop = document.querySelector("#scrollT")
 
-    if (document.body.scrollTop > 400 || document.documentElement.scrollTop > 400) {
+    if (document.body.scrollTop > 400 || document.documentElement.scrollTop > 420) {
         sTop.style.cssText =
             'opacity: 1; pointer-events: unset; visibility: visible;'
     } else {
@@ -61,7 +61,7 @@ function scrollFunction() { // SHOW THE SCROLLS BUTTONS AND FOOTER
     }
 
 }
-function bottomScroll() { // ON CLICK GO TO THE TOP OF THE PAGE
+function bottomScroll() {// ON CLICK GO TO THE BOTTOM OF THE PAGE
     const currentScroll = document.documentElement.scrollTop || document.body.scrollTop
     const targetScroll = document.body.scrollHeight - window.innerHeight
     const scrollDifference = targetScroll - currentScroll
@@ -86,7 +86,7 @@ function bottomScroll() { // ON CLICK GO TO THE TOP OF THE PAGE
 
     requestAnimationFrame(scrollStep)
 }
-function topScroll() { // ON CLICK GO TO THE TOP OF THE PAGE
+function topScroll() {// ON CLICK GO TO THE TOP OF THE PAGE
     const currentScroll = document.documentElement.scrollTop || document.body.scrollTop
     const targetScroll = 0
     const scrollDifference = targetScroll - currentScroll
@@ -112,7 +112,7 @@ function topScroll() { // ON CLICK GO TO THE TOP OF THE PAGE
     requestAnimationFrame(scrollStep)
 }
 
-// ON HOVER ON SEE BUTTON CHANGE COLORS OF THE IP
+// ON HOVER BUTTON SEE CHANGE COLORS OF THE IP SHOWED
 function getBlue() {
     let Ip = document.querySelector('#IP')
 
@@ -164,13 +164,13 @@ function lOuKoBackColors() {
         'color: greenyellow;'
 }
 
-function showIP(ip) { // SHOW IP IN SCREEN
+function showIP(ip) {// SHOW IP ON SCREEN
     let Ip = document.querySelector('#IP')
 
     Ip.textContent = `${ip}`
 }
 
-function verifyRepeatedListIP(ip) { // VERIFY IF THE IP IS REPEATED WITH ANY ITENS(ips) ON THE LIST AND SHOW ON THE SCREEN
+function verifyRepeatedListIP(ip) {// VERIFY IF THE IP IS REPEATED WITH ANY ITENS ON THE LIST AND SHOW ON SCREEN
     let rIp = document.querySelector('#equalRepeatedListIP')
     
     if (lIp.some(entry => entry.ip === ip)) {
@@ -194,7 +194,7 @@ function verifyRepeatedListIP(ip) { // VERIFY IF THE IP IS REPEATED WITH ANY ITE
     }
 }
 
-function verifyEqualIPEnterListIp(ip) { // VERIFY IF THE IP IS EQUAL WITH THE PREVIOUS IP AND SHOW ON THE SCREEN
+function verifyEqualIPEnterListIp(ip) {// VERIFY IF THE IP IS EQUAL WITH THE PREVIOUS IP AND SHOW ON SCREEN
     let sIcon = document.querySelector('#saveIcon')
     let Ip = document.querySelector('#IP')
     let eIp = document.querySelector('#equalIP')
@@ -245,7 +245,7 @@ function verifyEqualIPEnterListIp(ip) { // VERIFY IF THE IP IS EQUAL WITH THE PR
     }
 }
 
-function saveListIP(ip) { // SAVE ITENS INTO THE LOCAL STORAGE
+function saveListIP(ip) {// SAVE ITENS INTO THE LOCAL STORAGE
     let date = new Date().toLocaleString().replace(',', ' -')
     
     lIp.unshift({ ip: ip, date: date })
@@ -258,7 +258,7 @@ function saveListIP(ip) { // SAVE ITENS INTO THE LOCAL STORAGE
     
     renderListIP()
 }
-function renderListIP() { // LOAD ITENS INTO THE LIST
+function renderListIP() {// LOAD ITENS OF LOCAL STORAGE INTO THE IPS LIST
     let list = document.querySelector('table tbody')
     
     list.innerHTML = ''
@@ -309,11 +309,8 @@ function renderListIP() { // LOAD ITENS INTO THE LIST
         }
     }
 }
-function confirmResetListIP() { // CONFIRM ERASE ITENS OF THE LIST
+function confirmResetListIP() {// CONFIRM ERASE ITENS OF THE LIST
     let barL = document.querySelector('#barLoading')
-
-    barL.style.cssText =
-        'width: 100vw; visibility: visible;'
 
     let userConfirmation = confirm('Tem certeza de que deseja apagar a lista?\nsera apagada para sempre.')
     
@@ -332,6 +329,9 @@ function confirmResetListIP() { // CONFIRM ERASE ITENS OF THE LIST
     let rIp = document.querySelector('#equalRepeatedListIP')
 
     if (userConfirmation) {
+        barL.style.cssText =
+            'width: 100vw; visibility: visible;'
+
         previousIp = null
 
         lIp = [] 
@@ -369,17 +369,14 @@ function confirmResetListIP() { // CONFIRM ERASE ITENS OF THE LIST
         setTimeout(function() {
             alert('Lista apagada.')
         }, 300)
-        
-        resetLoadingBar()
-        
     } else {
         renderListIP()
-
-        resetLoadingBar()
     }
+
+    resetLoadingBar()
 }
 
-function getIP() { // CALL AN EXTERNAL API TO GET YOUR IP AND LOAD ALL THE FUNCTIONS
+function getIP() {// CALL AN EXTERNAL API TO GET YOUR IP AND LOAD ALL THE FUNCTIONS
     let barL = document.querySelector('#barLoading')
 
     barL.style.cssText =
@@ -388,15 +385,17 @@ function getIP() { // CALL AN EXTERNAL API TO GET YOUR IP AND LOAD ALL THE FUNCT
     fetch('https://api.ipify.org?format=json') 
     .then(response => response.json())
     
-    .catch(error => {
-        alert('ERROR: ' + error.message)
-    })
     
     .then(data => {
         showIP(data.ip)
         verifyRepeatedListIP(data.ip)
         verifyEqualIPEnterListIp(data.ip)
-
+        
         resetLoadingBar()
     })
+
+    .catch(error => {
+        alert('ERROR: ' + error.message)
+    })
+
 }

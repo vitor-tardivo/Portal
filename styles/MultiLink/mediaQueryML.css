@@ -1,8 +1,9 @@
 @charset "UTF-8"; /* KEYBOARD CODE OF THE STYLIZATIONS CODE */
 
 @media print /* MEDIA QUERY PRINT */ {
-     
-
+     header {
+          display: none;
+     }
 }
 
 @media screen and (max-width: 1050px) /* MEDIA QUERY SMALL SCREENS(phones) */ {
@@ -25,8 +26,28 @@
      #home:focus {
           outline: 1px solid rgba(255, 255, 255, 0);
      }
+
+     #scrollB, #scrollT {
+          padding: 0px 12px 10px 12px;
+          font-size: 10vw;
+          transition: 0.2s;
+     }
+     #scrollB {
+          left: 9vw; /* left: 17.4vw; */
+          top: 640px; /*top: 160px;*/ /*top: 45vh;*/
+     }
+     #scrollT {
+          right: 9vw;
+          top: 640px; /*top: 45vh;*/
+     }
+     #scrollB:hover, #scrollT:hover {
+          color: var(--colorWhite);  
+     }
   
      footer {
           font-size: 2.7vw;
+     }
+     #linklOuKo:focus {
+          outline: 1px solid rgba(255, 255, 255, 0);
      }
 }

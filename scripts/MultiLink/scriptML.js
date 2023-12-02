@@ -1,19 +1,39 @@
-window.onscroll = function() { scrollFunction() } // CALL FUNCTION FOR SCROLLS BUTTONS
-
-function resetLoadingBar() { // RESET LOADING BAR WORK
+function resetLoadingBar() {// RESET LOADING BAR WORK
     let barL = document.querySelector('#barLoading')
-
+    
     setTimeout(function() {
         barL.style.cssText =
-            'width: 0vw;'
+        'width: 0vw;'
         setTimeout(function() {
             barL.style.cssText =
-                'visibility: hidden;'
+            'visibility: hidden;'
         }, 300)
     }, 300)
 }
 
-function scrollFunction() { // SHOW THE SCROLLS BUTTONS AND FOOTER
+window.onscroll = function() { scrollFunction() }// CALL FUNCTION FOR SCROLLS BUTTONS
+
+function scrollFunction() {// SHOW THE SCROLLS BUTTONS AND FOOTER
+    let sBottom = document.querySelector("#scrollB")
+    
+    if (document.body.scrollHeight - (window.scrollY + window.innerHeight) < 190) {
+        sBottom.style.cssText =
+            'opacity: 0; pointer-events: none; visibility: hidden;'
+    } else {
+        sBottom.style.cssText =
+            'opacity: 1; pointer-events: unset; visibility: visible;'
+    }
+    
+    let sTop = document.querySelector("#scrollT")
+
+    if (document.body.scrollTop > 230 || document.documentElement.scrollTop > 220) {
+        sTop.style.cssText =
+            'opacity: 1; pointer-events: unset; visibility: visible;'
+    } else {
+        sTop.style.cssText =
+            'opacity: 0; pointer-events: none; visibility: hidden;'
+    }
+
     let foot = document.querySelector('footer')
     let lO = document.querySelector('#linklOuKo')
 
@@ -30,6 +50,56 @@ function scrollFunction() { // SHOW THE SCROLLS BUTTONS AND FOOTER
         lO.style.cssText =
             'pointer-events: none;'
     }
+}
+function bottomScroll() {// ON CLICK GO TO THE BOTTOM OF THE PAGE
+    const currentScroll = document.documentElement.scrollTop || document.body.scrollTop
+    const targetScroll = document.body.scrollHeight - window.innerHeight
+    const scrollDifference = targetScroll - currentScroll
+    const duration = 100
+
+    let startTime
+
+    function scrollStep(timestamp) {
+        if (!startTime) {
+            startTime = timestamp
+        }
+
+        const progress = Math.min((timestamp - startTime) / duration, 1)
+
+        document.documentElement.scrollTop = currentScroll + scrollDifference * progress
+        document.body.scrollTop = currentScroll + scrollDifference * progress
+
+        if (progress < 1) {
+            requestAnimationFrame(scrollStep)
+        }
+    }
+
+    requestAnimationFrame(scrollStep)
+}
+function topScroll() {// ON CLICK GO TO THE TOP OF THE PAGE
+    const currentScroll = document.documentElement.scrollTop || document.body.scrollTop
+    const targetScroll = 0
+    const scrollDifference = targetScroll - currentScroll
+    const duration = 100
+
+    let startTime;
+
+    function scrollStep(timestamp) {
+        if (!startTime) {
+            startTime = timestamp
+        }
+
+        const progress = Math.min((timestamp - startTime) / duration, 1)
+
+        document.documentElement.scrollTop = currentScroll + scrollDifference * progress
+        document.body.scrollTop = currentScroll + scrollDifference * progress
+
+        if (progress < 1) {
+            requestAnimationFrame(scrollStep)
+        }
+    }
+
+    requestAnimationFrame(scrollStep)
 }
 
 // ON HOVER CHANGE COLLORS OF lOuKo
@@ -70,26 +140,88 @@ function lOuKoBackColors() {
         'color: greenyellow;'
 }
 
-function openLinks() {
-    let areaLinks = document.querySelector('#links')
-    let links = areaLinks.value.split('\n')
+function eraseListLinks() {// ERASE LINKS OF THE LIST
     let barL = document.querySelector('#barLoading')
+    let aShowLinks = document.querySelector('#listLinks')
+    let mess = document.querySelector('#message')
+    let bList = document.querySelector('#erase')
 
     barL.style.cssText =
         'width: 100vw; visibility: visible;'
 
-    for (let i = 0; i < links.length; i++) {
-        let link = links[i].trim()
+    aShowLinks.innerHTML = ''
 
-        if (link !== '') {
-            let aShowLinks = document.querySelector('aside')
-            let linksElement = document.createElement('p')
+    mess.textContent = '...'
+    mess.style.cssText =
+        'border: 2px solid var(--colorBlack);'
 
-            linksElement.textContent = link
-            aShowLinks.appendChild(linksElement)
+    bList.style.cssText =
+        'opacity: 0; pointer-events: none;'
 
-            window.open(link, '_blank')
+    resetLoadingBar()
+}
+
+function validURL(url) {// VALIDES THE LINK(URL)
+    try {
+        new URL(url)
+        return true
+    } catch (error) {
+        return false
+    }
+}
+
+function openLinks() {// ON CLICK OPEN THE PASTED LINKS AND MORE INFORMATION ABOUT IT
+    try {
+        let mess = document.querySelector('#message')
+        let barL = document.querySelector('#barLoading')
+        let titleL = document.querySelector('#titleLinks')
+        let areaLinks = document.querySelector('#pasteLinks')
+        let aShowLinks = document.querySelector('#listLinks')
+        let bList = document.querySelector('#erase')
+        let links = areaLinks.value.split('\n')
+
+        aShowLinks.innerHTML = ''
+
+        if (areaLinks.value.trim() === '') {
+            mess.textContent = 'Insira os Links para poder abri-los!'
+            mess.style.cssText =
+                'border: 2px solid var(--colorRed);'
+        } else {    
+            for (let i = 0; i < links.length; i++) {
+                let link = links[i].trim()
+
+                let listElement = document.createElement('li')
+                if (link !== '') {
+                    if (!validURL(link)) {
+                        mess.innerHTML = `Link INVALIDO: ${link}.`
+                        mess.style.cssText =
+                            'border: 2px solid var(--colorRed);'
+                    } else {
+                        mess.innerHTML = 'Se ocorrer algum problema clique no ❗️, na lateral direita da tela para ajuda.'
+                        mess.style.cssText =
+                            'border: 2px solid var(--colorRed);'
+
+                        barL.style.cssText =
+                            'width: 100vw; visibility: visible;'
+
+                        bList.style.cssText =
+                            'opacity: 1; pointer-events: unset;'
+                            
+                        areaLinks.style.cssText =  
+                            'border-radius: 5px 5px 5px 5px;'
+                        titleL.style.cssText =  
+                            'opacity: 1; visibility: visible;'
+
+                        listElement.innerHTML = `<abbr title="Link colado"><a href="${link} rel="noopener noreferrer" referrerpolicy="no-referrer" target="_blank">&#128279; ${link}</a></abbr>` 
+                        aShowLinks.appendChild(listElement)
+                        
+                        window.open(link, '_blank')   
+                    }
+                }
+                resetLoadingBar()
+            }
         }
-        resetLoadingBar()
+    } catch (error) {
+        alert('ERROR: ' + error.message);
     }
 }

@@ -2,25 +2,39 @@
 
 /* BODY STYLIZATION */
 body {
-    padding-bottom: 90px;
+    padding-bottom: 110px;
     /*height: 100vw; /*<- dev*/
     /*width: 100vw; /*<- dev*/
-    transition: 0.3s;
+    transition: var(--configTrasition03s);
 }
 
+/* LOADING BAR STYLIZATION */
 #barLoading {
     width: 0vw;
     visibility: hidden;
-    transition: 0.3s;
+    transition: var(--configTrasition03s);
 }
 
-/* ABBR STYLIZATION */
-abbr {
-    text-decoration: none;
+/* LINK HELP STYLIZATION */
+#help {
+    background-color: rgba(231, 231, 231, 0.329);
+    position: fixed;
+    top: 45vh;
+    right: 35px;
+    border: 2px solid rgba(0, 0, 0, 0);
+    border-radius: 50px;
+    outline: 2px solid rgba(0, 0, 0, 0);
+    font-size: 3.3vw;
+    transition: var(--configTrasition03s);
 }
-/* A STYLIZATION */
-a {
-    text-decoration: none;
+#help:hover {
+    outline: 2px solid var(--colorWhite);
+}
+#help:active {
+    outline: 2px solid var(--colorWhite);
+}
+#help:focus {
+    outline: 2px solid var(--colorWhite);
 }
 
 /* HEADER STYLIZATION */
@@ -31,8 +45,8 @@ header {
 /* MAIN STYLIZATION */
 main {
     display: flex;
-    place-items: center;
     flex-direction: column;
+    place-items: center;
 }
 
 /* BUTTON OPEN STYLIZATION */
@@ -42,84 +56,216 @@ main {
     color: var(--colorBlack);
     border: 2px solid var(--colorBlack);
     outline: 2px solid rgba(0, 0, 0, 0);
+    box-shadow: 2px 2px 10px var(--colorShadow);
     margin: 0px 0px 0px 0px;
     padding: 0px 20px 3px 20px;
     font-size: 3.5vw;
     cursor: pointer;
     transform: translate(0px, -10px);    
-    transition: 0.3s;
+    transition: var(--configTrasition03s);
 }
 #open:hover {
     background-color: var(--colorBlack);
     color: var(--colorWhite);
     border: 2px solid var(--colorWhite);
     transform: translate(0px, 0px);
-    transition: 0.3s;
+    transition: var(--configTrasition03s);
 }
 #open:active {
     background-color: var(--colorBlack);
     color: var(--colorWhite);
     border: 2px solid var(--colorWhite);
     transform: translate(0px, 0px);
-    transition: 0.3s;
+    transition: var(--configTrasition03s);
 }
 #open:focus {
     border: 2px solid rgba(207, 44, 44, 0);
     outline: 2px solid var(--colorWhite);
-    transition: 0.3s;
+    transition: var(--configTrasition03s);
 }
 
-/* TIP STYLIZATION */
+#container {
+    width: 55vw;
+    box-sizing: border-box;
+}
+
+/* MESSAGE STYLIZATION */
 #message {
+    background-color: var(--colorContrast);
     color: var(--colorWhite);
-    text-shadow: 2px 2px 4px var(--colorShadow);
-    font-family: var(--fontDisplay);
+    border: 2px solid var(--colorBlack);
+    border-radius: 15px 15px 5px 5px;
+    outline: 2px solid rgba(0, 0, 0, 0);
+    box-shadow: 2px 2px 10px var(--colorShadow);
+    box-sizing: border-box;
+    margin: 13px 0px 0px 0px;
+    padding: 5px 15px 10px 15px;
+    text-align: center;
     font-weight: normal;
-    font-size: 0.9vw;
-    padding: 7px;
-    margin: 13px 0px 13px 0px;
+    font-size: 1.4vw;
+    font-family: var(--fontDisplay);
+    word-wrap: break-word;
     cursor: help;
     user-select: none;
-    transition: 0.3s;
+    transition: var(--configTrasition03s);
 }
 
-/* PASTE LINKS STYLIZATION */
-textarea {
+/* PASTE LINKS AREA STYLIZATION */
+#pasteLinks {
     resize: vertical;
+    color: var(--colorBlack) !important;
+    background-color: var(--colorInteractionElements);
+    border: 2px solid var(--colorBlack);
+    border-radius: 5px 5px 15px 15px;
+    outline: 2px solid rgba(0, 0, 0, 0);
+    box-shadow: 2px 2px 10px var(--colorShadow);
+    box-sizing: border-box;
+    padding: 7px;
+    line-height: 2em;
+    width: 100%;
+    font-size: 1vw;
+    font-family: var(--fontMonoSerif);
+    transition: border var(--configTrasition03s), outline var(--configTrasition03s), background-color var(--configTrasition03s);
+}
+#pasteLinks:hover {
+    background-color: var(--colorWhite);
+}
+#pasteLinks:focus-within {
+    background-color: var(--colorWhite);
+    border: 2px solid rgba(255, 255, 255, 0);    
+    outline: 2px solid var(--colorWhite);
+}
+#pasteLinks::placeholder {
+    color: rgb(100, 100, 100);
+}
+
+/* TITLE LIST LINKS STYLIZATION */
+#titleLinks {
+    display: block;
+    background-color: var(--colorContrast);
+    color: var(--colorWhite);
+    border: 2px solid var(--colorBlack);
+    border-radius: 5px 5px 5px 5px;
+    box-shadow: 2px 2px 10px var(--colorShadow);
+    outline: 2px solid rgba(0, 0, 0, 0);
+    box-sizing: border-box;
+    margin: 0px 0px 0px 0px;
+    padding: 10px 15px 10px 15px;
+    text-align: center;
+    font-weight: normal;
+    font-size: 1.2vw;
+    font-family: var(--fontDisplay);
+    cursor: help;
+    user-select: none;
+    opacity: 0;
+    visibility: hidden;
+    transition: var(--configTrasition03s);
+}
+
+/* LIST LINKS STYLIZATION */
+#listLinks {
+    flex-direction: column;
+}
+#listLinks > li {
+    border-bottom: 1px solid var(--colorInteractionElements);
+    box-sizing: border-box;
+    padding: 15px;
+}
+#listLinks > li > abbr > a {
+    color: var(--colorWhite);
+    outline: 1px solid rgba(0, 0, 0, 0);
+    text-shadow: 2px 2px 4px var(--colorShadow);
+    font-size: 0.9vw;
+    font-family: var(--fontMonoSerif);
+    word-wrap: break-word;
+    transition: var(--configTrasition03s);
+}
+#listLinks > li > abbr > a:hover {
+    color: var(--colorInteractionElements);
+}
+#listLinks > li > abbr > a:active {
+    color: var(--colorInteractionElements);
+}
+#listLinks > li > abbr > a:focus {
+    border-radius: 50px;
+    outline: 1px solid var(--colorWhite);
+}
+
+/* BUTTON ERASE STYLIZATION */
+#erase {
+    display: inline-block;
     background-color: var(--colorWhite);
     color: var(--colorBlack);
-    font-size: 0.8vw;
-    font-family: var(--fontMonoSerif);
-    padding: 7px;
-    border-radius: 10px;
-    border: 1px solid var(--colorBlack);
+    border: 2px solid var(--colorBlack);
     outline: 2px solid rgba(0, 0, 0, 0);
-    transition: 0.3s;
+    margin: 13px 0px 0px 0px;
+    padding: 0px 17px 10px 17px;
+    font-size: 3.5vw;
+    cursor: pointer;
+    opacity: 0;
+    pointer-events: none;
+    transform: translate(0px, 10px);    
+    transition: var(--configTrasition03s);
 }
-textarea:focus-within {
-    outline: 2px solid var(--colorWhite);
-    border: 1px solid var(--colorWhite);    
+#erase:hover {
+    background-color: var(--colorRed);
+    border: 2px solid var(--colorRed);
+    transform: translate(0px, 0px);
+}
+#erase:active {
+    background-color: var(--colorRed);
+    border: 2px solid var(--colorRed);
+    transform: translate(0px, 0px);
+}
+#erase:focus {
+    border: 2px solid rgba(207, 44, 44, 0);
+    outline: 2px solid var(--colorRed);
+}
+
+/* BUTTONS SCROLLS STYLIZATION */
+#scrollB, #scrollT {
+    position: fixed;
+    z-index: 2000;
+    /*bottom: 160px;*/ top: 45vh;
+    padding: 0px 7px 5px 7px;
+    font-size: 3.7vw;
+    transition: var(--configTrasition03s);
+}
+#scrollB {
+    display: inline-block;
+    /*left: 31.6vw;*/ left: 8.5vw;
+    pointer-events: none;
+    visibility: hidden;
+    transform: scaleY(-1);
+    opacity: 0;
+}
+#scrollT{
+    display: inline-block;
+    /*right: 31.6vw;*/ right: 8.5vw;
+    pointer-events: none;
+    visibility: hidden;
+    opacity: 0;
 }
 
 /* FOOTER STYLIZATION */
 footer {
     display: block;
     position: fixed;
-    bottom: 0;
+    z-index: 1000;
     left: 0;
     right: 0;
+    bottom: 0;
     background-color: var(--colorContrastOpacity);
-    border-radius: 0px 50px 0px 0px;
     border-top: 2px solid var(--colorBlack);
     border-right: 2px solid var(--colorBlack);
+    border-radius: 0px 50px 0px 0px;
     box-shadow: -2px -2px 10px var(--colorShadow);
     padding: 7px;
-    font-size: 1.2vw;
     text-align: center;
+    font-size: 1.2vw;
     opacity: 0;
     visibility: hidden;
-    z-index: 1000;
-    transition: 0.3s;
+    transition: var(--configTrasition03s);
 }
 /* CREDITS STYLIZATION */
 #by {
@@ -133,31 +279,31 @@ footer {
     padding: 7px 0px 0px 0px;
 }
 #linklOuKo {
-    text-decoration: none;
     outline: 1px solid rgba(0, 0, 0, 0);
+    text-decoration: none;
     pointer-events: none;
 }
 #linklOuKo:focus {
-    outline: 1px solid var(--colorWhite);
     border-radius: 50px;
+    outline: 1px solid var(--colorWhite);
 }
 #l {
     color: red;
-    transition: 0.3s;
+    transition: var(--configTrasition03s);
 }
 #O {
     color: blueviolet;
-    transition: 0.3s;
+    transition: var(--configTrasition03s);
 }
 #u {
     color: paleturquoise;
-    transition: 0.3s;
+    transition: var(--configTrasition03s);
 }
 #K {
     color: gold;
-    transition: 0.3s;
+    transition: var(--configTrasition03s);
 }
 #o {
     color: greenyellow;
-    transition: 0.3s;
+    transition: var(--configTrasition03s);
 }
