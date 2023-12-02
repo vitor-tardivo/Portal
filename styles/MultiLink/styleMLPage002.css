@@ -1,5 +1,46 @@
 @charset "UTF-8"; /* KEYBOARD CODE OF THE STYLIZATIONS CODE */
 
+main {
+    display: flex;
+    flex-direction: column;
+    place-items: center;
+}
+
+#container {
+    background-color: var(--colorWhite);
+    border-radius: 10px;
+    padding: 0px 35px 0px 35px;
+    line-height: 2em;
+}
+h1 {
+    box-sizing: border-box;
+    padding: 50px 0px 15px 0px;
+    text-align: center;
+    font-size: 3.5vw;
+    font-family: var(--fontDisplay);
+    word-wrap: break-word;
+}
+#subTitle {
+    box-sizing: border-box;
+    color: var(--colorBlack);
+    padding: 15px 0px 30px 0px;
+    font-size: 2vw;
+    font-family: var(--fontDisplay);
+    word-wrap: break-word;
+}
+#list {
+    margin: 0px 0px 25px 7em;
+}
+.tips {
+    box-sizing: border-box;
+    padding: 5px 0px 5px 0px;
+    color: var(--colorBlack);
+    font-size: 1.5vw;
+    font-family: var(--fontSerif);
+    word-wrap: break-word;
+    list-style-type: decimal;
+}
+
 /* FOOTER STYLIZATION */
 footer {
     display: block;
