@@ -140,16 +140,7 @@ function lOuKoBackColors() {
         'color: greenyellow;'
 }
 
-function validURL(url) {// VALIDES THE LINK(URL)
-    try {
-        new URL(url)
-        return true
-    } catch (error) {
-        return false
-    }
-}
-
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', function () {// THE KEYBOARD KEY ENTER ACTIVE THE BUTTON OPEN AND SHIFT+ENTER DO THE BREAK ROW INSTEAD
     const areaLinks = document.querySelector('#pasteLinks')
 
     areaLinks.addEventListener('keydown', function (event) {
@@ -170,15 +161,20 @@ document.addEventListener('DOMContentLoaded', function () {
     })
 })
 
-/*document.addEventListener('DOMContentLoaded', function () {
-    document.querySelector('#pasteLinks').addEventListener('keypress', function (event) {
-        if (event.key === 'Enter') {
-            event.preventDefault()
+function showInicialMessage() {
+    let mess = document.querySelector('#message')
 
-            document.querySelector('#open').click()
-        }
-    })
-})*/
+    mess.textContent = 'Verifique se os Links estão em cada linha!'
+}
+
+function validURL(url) {// VALIDES THE LINK(URL)
+    try {
+        new URL(url)
+        return true
+    } catch (error) {
+        return false
+    }
+}
 
 function eraseListLinks() {// ERASE LINKS OF THE LIST
     let barL = document.querySelector('#barLoading')
@@ -232,7 +228,7 @@ function openLinks() {// ON CLICK OPEN THE PASTED LINKS AND MORE INFORMATION ABO
                         mess.style.cssText =
                             'border: 2px solid var(--colorRed);'
                     } else {
-                        mess.innerHTML = 'Se ocorrer algum problema clique no ❗️, na lateral direita da tela para ajuda.'
+                        mess.innerHTML = 'Se ocorrer algum problema clique no ❗️, na lateral direita da tela para Ajuda.'
                         mess.style.cssText =
                             'border: 2px solid var(--colorRed);'
 
