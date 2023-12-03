@@ -140,14 +140,57 @@ function lOuKoBackColors() {
         'color: greenyellow;'
 }
 
+function validURL(url) {// VALIDES THE LINK(URL)
+    try {
+        new URL(url)
+        return true
+    } catch (error) {
+        return false
+    }
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+    const areaLinks = document.querySelector('#pasteLinks')
+
+    areaLinks.addEventListener('keydown', function (event) {
+        if (event.key === 'Enter') {
+            if (event.shiftKey) {
+                const cursorPosition = areaLinks.selectionStart
+                const textBefore = areaLinks.value.substring(0, cursorPosition)
+                const textAfter = areaLinks.value.substring(cursorPosition)
+
+                areaLinks.value = textBefore + '\n' + textAfter
+
+                event.preventDefault()
+            } else {
+                event.preventDefault()
+                document.querySelector('#open').click()
+            }
+        }
+    })
+})
+
+/*document.addEventListener('DOMContentLoaded', function () {
+    document.querySelector('#pasteLinks').addEventListener('keypress', function (event) {
+        if (event.key === 'Enter') {
+            event.preventDefault()
+
+            document.querySelector('#open').click()
+        }
+    })
+})*/
+
 function eraseListLinks() {// ERASE LINKS OF THE LIST
     let barL = document.querySelector('#barLoading')
+    let areaLinks = document.querySelector('#pasteLinks')
     let aShowLinks = document.querySelector('#listLinks')
     let mess = document.querySelector('#message')
     let bList = document.querySelector('#erase')
 
     barL.style.cssText =
         'width: 100vw; visibility: visible;'
+
+    areaLinks.value = ''
 
     aShowLinks.innerHTML = ''
 
@@ -161,14 +204,6 @@ function eraseListLinks() {// ERASE LINKS OF THE LIST
     resetLoadingBar()
 }
 
-function validURL(url) {// VALIDES THE LINK(URL)
-    try {
-        new URL(url)
-        return true
-    } catch (error) {
-        return false
-    }
-}
 
 function openLinks() {// ON CLICK OPEN THE PASTED LINKS AND MORE INFORMATION ABOUT IT
     try {

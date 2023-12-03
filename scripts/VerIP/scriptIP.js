@@ -309,7 +309,7 @@ function renderListIP() {// LOAD ITENS OF LOCAL STORAGE INTO THE IPS LIST
         }
     }
 }
-function confirmResetListIP() {// CONFIRM ERASE ITENS OF THE LIST
+function confirmEraseListItens() {// CONFIRM ERASE ITENS OF THE LIST
     let barL = document.querySelector('#barLoading')
 
     let userConfirmation = confirm('Tem certeza de que deseja apagar a lista?\nsera apagada para sempre.')
