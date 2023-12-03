@@ -165,6 +165,8 @@ function showInicialMessage() {
     let mess = document.querySelector('#message')
 
     mess.textContent = 'Verifique se os Links estão em cada linha!'
+    mess.style.cssText =
+        'border: 2px solid var(--colorBlack);'
 }
 
 function validURL(url) {// VALIDES THE LINK(URL)
