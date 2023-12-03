@@ -19,12 +19,12 @@ body {
 #help {
     background-color: rgba(231, 231, 231, 0.329);
     position: fixed;
-    top: 45vh;
-    right: 35px;
+    top: 46.5vh;
+    right: 20px;
     border: 2px solid rgba(0, 0, 0, 0);
     border-radius: 50px;
     outline: 2px solid rgba(0, 0, 0, 0);
-    font-size: 3.3vw;
+    font-size: 2vw;
     transition: var(--configTrasition03s);
 }
 #help:hover {
@@ -35,6 +35,31 @@ body {
 }
 #help:focus {
     outline: 2px solid var(--colorWhite);
+}
+
+/* BUTTONS SCROLLS STYLIZATION */
+#scrollB, #scrollT {
+    position: fixed;
+    z-index: 2000;
+    /*bottom: 160px;*/ top: 45vh;
+    padding: 0px 7px 5px 7px;
+    font-size: 3.7vw;
+    transition: var(--configTrasition03s);
+}
+#scrollB {
+    display: inline-block;
+    /*left: 31.6vw;*/ left: 8.5vw;
+    pointer-events: none;
+    visibility: hidden;
+    transform: scaleY(-1);
+    opacity: 0;
+}
+#scrollT{
+    display: inline-block;
+    /*right: 31.6vw;*/ right: 8.5vw;
+    pointer-events: none;
+    visibility: hidden;
+    opacity: 0;
 }
 
 /* HEADER STYLIZATION */
@@ -68,20 +93,16 @@ main {
     background-color: var(--colorBlack);
     color: var(--colorWhite);
     border: 2px solid var(--colorWhite);
-    transform: translate(0px, 0px);
-    transition: var(--configTrasition03s);
 }
 #open:active {
     background-color: var(--colorBlack);
     color: var(--colorWhite);
     border: 2px solid var(--colorWhite);
     transform: translate(0px, 0px);
-    transition: var(--configTrasition03s);
 }
 #open:focus {
     border: 2px solid rgba(207, 44, 44, 0);
     outline: 2px solid var(--colorWhite);
-    transition: var(--configTrasition03s);
 }
 
 #container {
@@ -127,6 +148,9 @@ main {
     font-family: var(--fontMonoSerif);
     transition: border var(--configTrasition03s), outline var(--configTrasition03s), background-color var(--configTrasition03s);
 }
+#pasteLinks::placeholder {
+    color: rgb(100, 100, 100);
+}
 #pasteLinks:hover {
     background-color: var(--colorWhite);
 }
@@ -134,9 +158,6 @@ main {
     background-color: var(--colorWhite);
     border: 2px solid rgba(255, 255, 255, 0);    
     outline: 2px solid var(--colorWhite);
-}
-#pasteLinks::placeholder {
-    color: rgb(100, 100, 100);
 }
 
 /* TITLE LIST LINKS STYLIZATION */
@@ -222,31 +243,6 @@ main {
     outline: 2px solid var(--colorRed);
 }
 
-/* BUTTONS SCROLLS STYLIZATION */
-#scrollB, #scrollT {
-    position: fixed;
-    z-index: 2000;
-    /*bottom: 160px;*/ top: 45vh;
-    padding: 0px 7px 5px 7px;
-    font-size: 3.7vw;
-    transition: var(--configTrasition03s);
-}
-#scrollB {
-    display: inline-block;
-    /*left: 31.6vw;*/ left: 8.5vw;
-    pointer-events: none;
-    visibility: hidden;
-    transform: scaleY(-1);
-    opacity: 0;
-}
-#scrollT{
-    display: inline-block;
-    /*right: 31.6vw;*/ right: 8.5vw;
-    pointer-events: none;
-    visibility: hidden;
-    opacity: 0;
-}
-
 /* FOOTER STYLIZATION */
 footer {
     display: block;
@@ -272,7 +268,7 @@ footer {
     color: var(--colorWhite);
     padding: 7px 0px 0px 0px;
     font-family: var(--fontDisplay);
-    user-select: none
+    user-select: none;
 }
 #lOuKo {
     font-family: 'Borel', cursive;
@@ -281,7 +277,6 @@ footer {
 #linklOuKo {
     outline: 1px solid rgba(0, 0, 0, 0);
     text-decoration: none;
-    pointer-events: none;
 }
 #linklOuKo:focus {
     border-radius: 50px;

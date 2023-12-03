@@ -1,5 +1,16 @@
 @charset "UTF-8"; /* KEYBOARD CODE OF THE STYLIZATIONS CODE */
 
+/* BODY STYLIZATION */
+body { 
+    background-color: var(--colorWhite);
+}
+
+/* HEADER STYLIZATION */
+header {
+    /*border-radius: 0px 0px 50px 0px;*/
+    margin-bottom: 0px;
+}
+
 main {
     display: flex;
     flex-direction: column;
@@ -7,34 +18,45 @@ main {
 }
 
 #container {
-    background-color: var(--colorWhite);
-    border-radius: 10px;
-    padding: 0px 35px 0px 35px;
-    line-height: 2em;
+    margin: 0px 0px 65px 0px;
+    padding: 50px 50px 50px 50px;
+    line-height: 2.2vw;
+    width: 75vw;
 }
 h1 {
     box-sizing: border-box;
-    padding: 50px 0px 15px 0px;
+    margin: 0px 0px 5.5vh 0px;
+    padding: 7px;
     text-align: center;
-    font-size: 3.5vw;
+    font-size: 4.5vw;
+    font-family: var(--fontDisplay);
+    word-wrap: break-word;
+}
+h2 {
+    box-sizing: border-box;
+    margin: 5.5vh 0px 2vh 0px;
+    padding: 7px;
+    text-align: center;
+    font-size: 3vw;
     font-family: var(--fontDisplay);
     word-wrap: break-word;
 }
 #subTitle {
-    box-sizing: border-box;
     color: var(--colorBlack);
-    padding: 15px 0px 30px 0px;
+    box-sizing: border-box;
+    margin: 2vh 0px 2vh 0px;
+    padding: 7px;
     font-size: 2vw;
     font-family: var(--fontDisplay);
     word-wrap: break-word;
 }
 #list {
-    margin: 0px 0px 25px 7em;
+    margin: 2vh 0px 0px 7vw;
 }
 .tips {
     box-sizing: border-box;
-    padding: 5px 0px 5px 0px;
     color: var(--colorBlack);
+    padding: 7px;
     font-size: 1.5vw;
     font-family: var(--fontSerif);
     word-wrap: break-word;
@@ -49,12 +71,16 @@ footer {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: var(--colorContrastOpacity);
+    background-color: var(--colorContrast);
     border-top: 2px solid var(--colorBlack);
+    border-right: 2px solid var(--colorBlack);
+    /*border-radius: 0px 50px 0px 0px;*/
     box-shadow: -2px -2px 10px var(--colorShadow);
     padding: 7px;
     text-align: center;
     font-size: 1.2vw;
+    opacity: 1;
+    visibility: visible;
     transition: var(--configTrasition03s);
 }
 /* CREDITS STYLIZATION */
@@ -62,7 +88,7 @@ footer {
     color: var(--colorWhite);
     padding: 7px 0px 0px 0px;
     font-family: var(--fontDisplay);
-    user-select: none
+    user-select: none;
 }
 #lOuKo {
     font-family: 'Borel', cursive;

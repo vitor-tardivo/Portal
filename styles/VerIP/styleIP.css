@@ -15,6 +15,31 @@ body {
     transition: var(--configTrasition03s);
 }
 
+/* BUTTONS SCROLLS STYLIZATION */
+#scrollB, #scrollT {
+    position: fixed;
+    z-index: 2000;
+    /*bottom: 160px;*/ top: 45vh;
+    padding: 0px 7px 5px 7px;
+    font-size: 3.7vw;
+    transition: var(--configTrasition03s);
+}
+#scrollB {
+    display: inline-block;
+    /*left: 31.6vw;*/ left: 6.5vw;
+    pointer-events: none;
+    visibility: hidden;
+    transform: scaleY(-1);
+    opacity: 0;
+}
+#scrollT{
+    display: inline-block;
+    /*right: 31.6vw;*/ right: 6.5vw;
+    pointer-events: none;
+    visibility: hidden;
+    opacity: 0;
+}
+
 /* ABBR STYLIZATION */
 /*.abbrS {
     visibility: hidden;
@@ -212,31 +237,6 @@ td {
     outline: 2px solid var(--colorRed);
 }
 
-/* BUTTONS SCROLLS STYLIZATION */
-#scrollB, #scrollT {
-    position: fixed;
-    z-index: 2000;
-    /*bottom: 160px;*/ top: 45vh;
-    padding: 0px 7px 5px 7px;
-    font-size: 3.7vw;
-    transition: var(--configTrasition03s);
-}
-#scrollB {
-    display: inline-block;
-    /*left: 31.6vw;*/ left: 6.5vw;
-    pointer-events: none;
-    visibility: hidden;
-    transform: scaleY(-1);
-    opacity: 0;
-}
-#scrollT{
-    display: inline-block;
-    /*right: 31.6vw;*/ right: 6.5vw;
-    pointer-events: none;
-    visibility: hidden;
-    opacity: 0;
-}
-
 /* FOOTER STYLIZATION */
 footer {
     display: block;
@@ -262,7 +262,7 @@ footer {
     color: var(--colorWhite);
     padding: 7px 0px 0px 0px;
     font-family: var(--fontDisplay);
-    user-select: none
+    user-select: none;
 }
 #lOuKo {
     font-family: 'Borel', cursive;
@@ -271,7 +271,6 @@ footer {
 #linklOuKo {
     outline: 1px solid rgba(0, 0, 0, 0);
     text-decoration: none;
-    pointer-events: none;
 }
 #linklOuKo:focus {
     border-radius: 50px;

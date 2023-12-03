@@ -14,7 +14,7 @@
 /* BODY STYLIZATION */
 body { 
     background-color: rgb(10, 10, 10) /*white*/;
-    transition: 0.3s;
+    transition: var(--configTrasition03s);
 }
 
 :root { /* CONFIGS STANDARD AND PATERNS */

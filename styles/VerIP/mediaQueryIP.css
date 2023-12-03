@@ -4,8 +4,12 @@
     body {
         padding-bottom: 0px;
     }
-    
-    header, #see, #saveIcon, #erase > abbr, #counterBottom, #scrollB, #scrollT {
+
+    #scrollB, #scrollT, footer {
+        background-color: rgba(0, 0, 0, 0);
+    }
+
+    #scrollB, #scrollT, header, #see, #saveIcon, #erase, #counterBottom {
         display: none;
     }
 
@@ -62,13 +66,11 @@
         color: rgba(0, 0, 0, 0);
     }
 
-    #scrollB, #scrollT, footer {
-        background-color: rgba(0, 0, 0, 0);
-    }
-
     footer {   
         border-right: 0px solid rgba(0, 0, 0, 0);
         position: unset;
+        opacity: 1;
+        visibility: visible;
     }
 }
 
@@ -77,15 +79,32 @@
         padding-bottom: 4px;
     }
     
+    #scrollB, #scrollT {
+        padding: 0px 12px 10px 12px;
+        font-size: 10vw;
+        transition: var(--configTrasition02s);
+    }
+    #scrollB {
+        left: 9vw; /* left: 17.4vw; */
+        top: 640px; /*top: 160px;*/ /*top: 45vh;*/
+    }
+    #scrollT {
+        right: 9vw;
+        top: 640px; /*top: 45vh;*/
+    }
+    #scrollB:hover, #scrollT:hover {
+        color: var(--colorWhite);  
+    }
+
     header {
         font-size: 2.7vw;
     }
     .navs {
         margin: 0px 5px 0px 5px;
-        transition: 0.2s;
+        transition: var(--configTrasition02s);
     }
     #home {
-        transition: 0.2s;
+        transition: var(--configTrasition02s);
     }
     #home:hover {
         color: var(--colorWhite);
@@ -100,7 +119,7 @@
     #see {
         padding: 0px 11px 2px 11px;
         font-size: 8vw;
-        transition: 0.2s;
+        transition: var(--configTrasition02s);
     }
     #see:hover {
         background-color: var(--colorWhite);
@@ -122,7 +141,7 @@
     #IP, #equalIP, #equalRepeatedListIP {
         font-size: 3vw;
         margin: 13px 4px 13px 4px;
-        transition: 0.2s; 
+        transition: var(--configTrasition02s); 
     }
     #IP:hover, #equalIP:hover, #equalRepeatedListIP:hover  {
         border-top: 2px solid var(--colorBlack);
@@ -159,7 +178,7 @@
         padding: 3px 15px 10px 15px;
         margin: 0px 0px 84px 0px;
         font-size: 8vw;
-        transition: 0.2s;
+        transition: var(--configTrasition02s);
     }
     #erase:hover {
         background-color: var(--colorWhite);
@@ -174,23 +193,6 @@
     #erase:focus {
         border: 2px solid var(--colorRed);
         outline: 2px solid rgba(255, 0, 0, 0);
-    }
-
-    #scrollB, #scrollT {
-        padding: 0px 12px 10px 12px;
-        font-size: 10vw;
-        transition: 0.2s;
-    }
-    #scrollB {
-        left: 9vw; /* left: 17.4vw; */
-        top: 640px; /*top: 160px;*/ /*top: 45vh;*/
-    }
-    #scrollT {
-        right: 9vw;
-        top: 640px; /*top: 45vh;*/
-    }
-    #scrollB:hover, #scrollT:hover {
-        color: var(--colorWhite);  
     }
 
     footer {
