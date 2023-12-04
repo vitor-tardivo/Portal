@@ -140,7 +140,7 @@ function lOuKoBackColors() {
         'color: greenyellow;'
 }
 
-document.addEventListener('DOMContentLoaded', function () {// THE KEYBOARD KEY ENTER ACTIVE THE BUTTON OPEN AND SHIFT+ENTER DO THE BREAK ROW INSTEAD
+document.addEventListener('DOMContentLoaded', function () {// THE KEYBOARD KEY (ENTER) NOW ACTIVE THE BUTTON OPEN AND (SHIFT+ENTER) NOW DO THE BREAK ROW INSTEAD TOO 
     const areaLinks = document.querySelector('#pasteLinks')
 
     areaLinks.addEventListener('keydown', function (event) {
@@ -163,6 +163,10 @@ document.addEventListener('DOMContentLoaded', function () {// THE KEYBOARD KEY E
 
 function showInicialMessage() {
     let mess = document.querySelector('#message')
+
+    if (mess.textContent !== '...') {
+        return
+    }
 
     mess.textContent = 'Verifique se os Links estão em cada linha!'
     mess.style.cssText =
