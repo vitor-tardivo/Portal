@@ -169,15 +169,6 @@ function showInicialMessage() {
         'border: 2px solid var(--colorBlack);'
 }
 
-function validURL(url) {// VALIDES THE LINK(URL)
-    try {
-        new URL(url)
-        return true
-    } catch (error) {
-        return false
-    }
-}
-
 function eraseListLinks() {// ERASE LINKS OF THE LIST
     let barL = document.querySelector('#barLoading')
     let areaLinks = document.querySelector('#pasteLinks')
@@ -219,14 +210,20 @@ function openLinks() {// ON CLICK OPEN THE PASTED LINKS AND MORE INFORMATION ABO
             mess.textContent = 'Insira os Links para poder abri-los!'
             mess.style.cssText =
                 'border: 2px solid var(--colorRed);'
-        } else {    
+        } else {
+            const urlRegex = /^(?:(?:https?|ftp):\/\/)?(?:www\.)?[a-zA-Z0-9-]+(?:\.[a-zA-Z]{2,})+(?:[/?].*)?$/
+
             for (let i = 0; i < links.length; i++) {
                 let link = links[i].trim()
 
                 let listElement = document.createElement('li')
                 if (link !== '') {
-                    if (!validURL(link)) {
-                        mess.innerHTML = `Link INVALIDO: ${link}.`
+                    if (!/^https?:\/\//i.test(link)) {
+                        link = "http://" + link
+                    }
+
+                    if (!urlRegex.test(link)) {
+                        mess.innerHTML = `Link INVALIDO: ${link}, clique no ❗️, para Ajuda.`
                         mess.style.cssText =
                             'border: 2px solid var(--colorRed);'
                     } else {
