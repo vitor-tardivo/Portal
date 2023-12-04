@@ -252,6 +252,10 @@ function openLinks() {// ON CLICK OPEN THE PASTED LINKS AND MORE INFORMATION ABO
             }
         }
     } catch (error) {
+        mess.innerHTML = `ERROR.`
+        mess.style.cssText =
+            'border: 2px solid var(--colorRed);'
+
         alert('ERROR: ' + error.message);
     }
 }
