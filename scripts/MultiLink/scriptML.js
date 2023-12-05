@@ -174,27 +174,41 @@ function showInicialMessage() {
 }
 
 function eraseListLinks() {// ERASE LINKS OF THE LIST
-    let barL = document.querySelector('#barLoading')
-    let areaLinks = document.querySelector('#pasteLinks')
-    let aShowLinks = document.querySelector('#listLinks')
-    let mess = document.querySelector('#message')
-    let bList = document.querySelector('#erase')
+    try {
+        let barL = document.querySelector('#barLoading')
+        let mess = document.querySelector('#message')
+        let areaLinks = document.querySelector('#pasteLinks')
+        let titleL = document.querySelector('#titleLinks')
+        let aShowLinks = document.querySelector('#listLinks')
+        let bList = document.querySelector('#erase')
 
-    barL.style.cssText =
-        'width: 100vw; visibility: visible;'
+        barL.style.cssText =
+            'width: 100vw; visibility: visible;'
+            
+        mess.textContent = '...'
+        mess.style.cssText =
+            'border: 2px solid var(--colorBlack);'
+            
+        areaLinks.value = ''
+        areaLinks.style.cssText =  
+            'border-radius: 5px 5px 15px 15px;'
 
-    areaLinks.value = ''
+        titleL.style.cssText =  
+            'opacity: 0; visibility: hidden;'
 
-    aShowLinks.innerHTML = ''
+        aShowLinks.innerHTML = ''
 
-    mess.textContent = '...'
-    mess.style.cssText =
-        'border: 2px solid var(--colorBlack);'
+        bList.style.cssText =
+            'opacity: 0; pointer-events: none;'
 
-    bList.style.cssText =
-        'opacity: 0; pointer-events: none;'
+        resetLoadingBar()
+    } catch (error) {
+        mess.innerHTML = `ERROR.`
+        mess.style.cssText =
+            'border: 2px solid var(--colorRed);'
 
-    resetLoadingBar()
+        alert('ERROR: ' + error.message);
+    }
 }
 
 
@@ -230,6 +244,11 @@ function openLinks() {// ON CLICK OPEN THE PASTED LINKS AND MORE INFORMATION ABO
                         mess.innerHTML = `Link INVALIDO: ${link}, clique no ❗️, para Ajuda.`
                         mess.style.cssText =
                             'border: 2px solid var(--colorRed);'
+                        areaLinks.style.cssText =  
+                            'border-radius: 5px 5px 15px 15px;'
+        
+                        titleL.style.cssText =  
+                            'opacity: 0; visibility: hidden;'
                     } else {
                         mess.innerHTML = 'Se ocorrer algum problema clique no ❗️, na lateral direita da tela para Ajuda.'
                         mess.style.cssText =
@@ -238,14 +257,15 @@ function openLinks() {// ON CLICK OPEN THE PASTED LINKS AND MORE INFORMATION ABO
                         barL.style.cssText =
                             'width: 100vw; visibility: visible;'
 
-                        bList.style.cssText =
-                            'opacity: 1; pointer-events: unset;'
-                            
                         areaLinks.style.cssText =  
                             'border-radius: 5px 5px 5px 5px;'
+
                         titleL.style.cssText =  
                             'opacity: 1; visibility: visible;'
 
+                        bList.style.cssText =
+                            'opacity: 1; pointer-events: unset;'
+                        
                         listElement.innerHTML = `<abbr title="Link colado"><a href="${link} rel="noopener noreferrer" referrerpolicy="no-referrer" target="_blank">&#128279; ${link}</a></abbr>` 
                         aShowLinks.appendChild(listElement)
                         

@@ -1,8 +1,12 @@
 let previousIp = null// VARIABLE PREVIOUS IP
 
 document.addEventListener('DOMContentLoaded', function () {// LOAD LOCAL STORAGE ITENS INTO LIST ON PAGE LOAD
-    lIp = JSON.parse(localStorage.getItem('ipList')) || []
-    renderListIP()
+    try {    
+        lIp = JSON.parse(localStorage.getItem('ipList')) || []
+        renderListIP()
+    } catch (error) {
+        alert('ERROR: ' + error.message);
+    }
 })
 
 let lIp = []// VARIABLE LIST
@@ -165,215 +169,239 @@ function lOuKoBackColors() {
 }
 
 function showIP(ip) {// SHOW IP ON SCREEN
-    let Ip = document.querySelector('#IP')
+    try {    
+        let Ip = document.querySelector('#IP')
 
-    Ip.textContent = `${ip}`
+        Ip.textContent = `${ip}`
+    } catch (error) {
+        alert('ERROR: ' + error.message);
+    }
 }
 
 function verifyRepeatedListIP(ip) {// VERIFY IF THE IP IS REPEATED WITH ANY ITENS ON THE LIST AND SHOW ON SCREEN
-    let rIp = document.querySelector('#equalRepeatedListIP')
-    
-    if (lIp.some(entry => entry.ip === ip)) {
-        rIp.style.cssText =
-            'border-left: 2px solid var(--colorWhite); border-right: 2px solid var(--colorWhite);'
-        setTimeout(function() {
+    try {
+        let rIp = document.querySelector('#equalRepeatedListIP')
+        
+        if (lIp.some(entry => entry.ip === ip)) {
             rIp.style.cssText =
-                'border-left: 2px solid var(--colorRed); border-right: 2px solid var(--colorRed);'
-        }, 300)
+                'border-left: 2px solid var(--colorWhite); border-right: 2px solid var(--colorWhite);'
+            setTimeout(function() {
+                rIp.style.cssText =
+                    'border-left: 2px solid var(--colorRed); border-right: 2px solid var(--colorRed);'
+            }, 300)
 
-        rIp.textContent = 'Repetido'
-    } else {
-        rIp.style.cssText =
-            'border-left: 2px solid var(--colorWhite); border-right: 2px solid var(--colorWhite);'
-        setTimeout(function() {
+            rIp.textContent = 'Repetido'
+        } else {
             rIp.style.cssText =
-                'border-left: 2px solid var(--colorGreen); border-right: 2px solid var(--colorGreen);'
-        }, 300)
+                'border-left: 2px solid var(--colorWhite); border-right: 2px solid var(--colorWhite);'
+            setTimeout(function() {
+                rIp.style.cssText =
+                    'border-left: 2px solid var(--colorGreen); border-right: 2px solid var(--colorGreen);'
+            }, 300)
 
-        rIp.textContent = 'Não Repetido'
+            rIp.textContent = 'Não Repetido'
+        }
+    } catch (error) {
+        alert('ERROR: ' + error.message);
     }
 }
 
 function verifyEqualIPEnterListIp(ip) {// VERIFY IF THE IP IS EQUAL WITH THE PREVIOUS IP AND SHOW ON SCREEN
-    let sIcon = document.querySelector('#saveIcon')
-    let Ip = document.querySelector('#IP')
-    let eIp = document.querySelector('#equalIP')
-    
-    if (previousIp === null || previousIp !== ip) {
-        sIcon.textContent = 'SALVANDO'
-        sIcon.style.cssText =
-            'color: var(--colorWhite); animation: borderBlink 0.3s linear infinite;'
+    try {
+        let sIcon = document.querySelector('#saveIcon')
+        let Ip = document.querySelector('#IP')
+        let eIp = document.querySelector('#equalIP')
+        
+        if (previousIp === null || previousIp !== ip) {
+            sIcon.textContent = 'SALVANDO'
+            sIcon.style.cssText =
+                'color: var(--colorWhite); animation: borderBlink 0.3s linear infinite;'
 
-        eIp.style.cssText =
-            'border-left: 2px solid var(--colorWhite); border-right: 2px solid var(--colorWhite);'
-        setTimeout(function() {
             eIp.style.cssText =
-                'border-left: 2px solid var(--colorGreen); border-right: 2px solid var(--colorGreen);'
-        }, 300)
+                'border-left: 2px solid var(--colorWhite); border-right: 2px solid var(--colorWhite);'
+            setTimeout(function() {
+                eIp.style.cssText =
+                    'border-left: 2px solid var(--colorGreen); border-right: 2px solid var(--colorGreen);'
+            }, 300)
 
-        Ip.style.cssText =
-            'border-left: 2px solid var(--colorBlue); border-right: 2px solid var(--colorBlue);'
-        setTimeout(function() {
+            Ip.style.cssText =
+                'border-left: 2px solid var(--colorBlue); border-right: 2px solid var(--colorBlue);'
+            setTimeout(function() {
+                Ip.style.cssText =
+                    'border-left: 2px solid var(--colorWhite); border-right: 2px solid var(--colorWhite);'
+            }, 300)
+
+            eIp.textContent = 'Mudou'
+
+            previousIp = ip
+
+            saveListIP(ip)
+
+            setTimeout(function() {
+                sIcon.textContent = 'SALVADO'
+                sIcon.style.cssText =
+                    'color: rgb(110, 110, 110); animation: none;'
+            }, 300)
+        } else {
+            eIp.style.cssText =
+                'border-left: 2px solid var(--colorWhite); border-right: 2px solid var(--colorWhite);'
+            setTimeout(function() {
+                eIp.style.cssText =
+                    'border-left: 2px solid var(--colorRed); border-right: 2px solid var(--colorRed);'
+            }, 300)
+            
             Ip.style.cssText =
                 'border-left: 2px solid var(--colorWhite); border-right: 2px solid var(--colorWhite);'
-        }, 300)
+            
+            eIp.textContent = 'Não mudou'
 
-        eIp.textContent = 'Mudou'
-
-        previousIp = ip
-
-        saveListIP(ip)
-
-        setTimeout(function() {
-            sIcon.textContent = 'SALVADO'
-            sIcon.style.cssText =
-                'color: rgb(110, 110, 110); animation: none;'
-        }, 300)
-    } else {
-        eIp.style.cssText =
-            'border-left: 2px solid var(--colorWhite); border-right: 2px solid var(--colorWhite);'
-        setTimeout(function() {
-            eIp.style.cssText =
-                'border-left: 2px solid var(--colorRed); border-right: 2px solid var(--colorRed);'
-        }, 300)
-        
-        Ip.style.cssText =
-            'border-left: 2px solid var(--colorWhite); border-right: 2px solid var(--colorWhite);'
-        
-        eIp.textContent = 'Não mudou'
-
+        }
+    } catch (error) {
+        alert('ERROR: ' + error.message);
     }
 }
 
 function saveListIP(ip) {// SAVE ITENS INTO THE LOCAL STORAGE
-    let date = new Date().toLocaleString().replace(',', ' -')
-    
-    lIp.unshift({ ip: ip, date: date })
+    try {
+        let date = new Date().toLocaleString().replace(',', ' -')
+        
+        lIp.unshift({ ip: ip, date: date })
 
-    if (lIp.length > 100) {
-        lIp.pop()
+        if (lIp.length > 100) {
+            lIp.pop()
+        }
+
+        localStorage.setItem('ipList', JSON.stringify(lIp))
+        
+        renderListIP()
+    } catch (error) {
+        alert('ERROR: ' + error.message);
     }
-
-    localStorage.setItem('ipList', JSON.stringify(lIp))
-    
-    renderListIP()
 }
 function renderListIP() {// LOAD ITENS OF LOCAL STORAGE INTO THE IPS LIST
-    let list = document.querySelector('table tbody')
-    
-    list.innerHTML = ''
-
-    if (lIp.length === 0) {
-        let row = list.insertRow(-1)
-
-        let cell1 = row.insertCell(0)
+    try {
+        let list = document.querySelector('table tbody')
         
-        cell1.textContent = '? - ?'
-
-        let cell2 = row.insertCell(1)
-
-        cell2.textContent = '?'
-    } else {
-        for (let entry of lIp) {
+        list.innerHTML = ''
+        
+        if (lIp.length === 0) {
             let row = list.insertRow(-1)
             
             let cell1 = row.insertCell(0)
             
-            cell1.textContent = entry.date
+            cell1.textContent = '? - ?'
             
             let cell2 = row.insertCell(1)
             
-            cell2.textContent = entry.ip
-
-            
-            let counterT = document.querySelector('#counterTop')
-            
-            counterT.textContent = `${lIp.length}/100`
-            
-            /*let abbrs = document.querySelector('.abbrS')
-
-            abbrs.style.cssText =
+            cell2.textContent = '?'
+        } else {
+            for (let entry of lIp) {
+                let row = list.insertRow(-1)
+                
+                let cell1 = row.insertCell(0)
+                
+                cell1.textContent = entry.date
+                
+                let cell2 = row.insertCell(1)
+                
+                cell2.textContent = entry.ip
+                
+                
+                let counterT = document.querySelector('#counterTop')
+                
+                counterT.textContent = `${lIp.length}/100`
+                
+                /*let abbrs = document.querySelector('.abbrS')
+                
+                abbrs.style.cssText =
                 'visibility: visible;'*/
-            
-            let counterB = document.querySelector('#counterBottom')
-            
-            counterB.textContent = `${lIp.length}/100`
-
-            counterB.style.cssText =
+                
+                let counterB = document.querySelector('#counterBottom')
+                
+                counterB.textContent = `${lIp.length}/100`
+                
+                counterB.style.cssText =
                 'opacity: 1; pointer-events: unset;'
-            
-            let bList = document.querySelector('#erase')
-
-            bList.style.cssText =
+                
+                let bList = document.querySelector('#erase')
+                
+                bList.style.cssText =
                 'opacity: 1; pointer-events: unset;'
+            }
         }
+    } catch (error) {
+        alert('ERROR: ' + error.message);
     }
 }
 function confirmEraseListItens() {// CONFIRM ERASE ITENS OF THE LIST
-    let barL = document.querySelector('#barLoading')
+    try {
+        let barL = document.querySelector('#barLoading')
+            
+        let userConfirmation = confirm('Tem certeza de que deseja apagar a lista?\nsera apagada para sempre.')
+            
+        let sIcon = document.querySelector('#saveIcon')
+            
+        let counterT = document.querySelector('#counterTop')
 
-    let userConfirmation = confirm('Tem certeza de que deseja apagar a lista?\nsera apagada para sempre.')
-    
-    let sIcon = document.querySelector('#saveIcon')
+        /*let abbrs = document.querySelector('.abbrS')*/
 
-    let counterT = document.querySelector('#counterTop')
+        let counterB = document.querySelector('#counterBottom')
 
-    /*let abbrs = document.querySelector('.abbrS')*/
+        let bList = document.querySelector('#erase')
 
-    let counterB = document.querySelector('#counterBottom')
+        let Ip = document.querySelector('#IP')
+        let eIp = document.querySelector('#equalIP')
+        let rIp = document.querySelector('#equalRepeatedListIP')
 
-    let bList = document.querySelector('#erase')
+        if (userConfirmation) {
+            barL.style.cssText =
+                'width: 100vw; visibility: visible;'
 
-    let Ip = document.querySelector('#IP')
-    let eIp = document.querySelector('#equalIP')
-    let rIp = document.querySelector('#equalRepeatedListIP')
+            previousIp = null
 
-    if (userConfirmation) {
-        barL.style.cssText =
-            'width: 100vw; visibility: visible;'
+            lIp = [] 
+            
+            localStorage.removeItem('ipList')
 
-        previousIp = null
+            sIcon.textContent = '?'
 
-        lIp = [] 
-        
-        localStorage.removeItem('ipList')
+            counterT.textContent = '?/100'
 
-        sIcon.textContent = '?'
+            /*abbrs.style.cssText =
+                'visibility: hidden;'*/
 
-        counterT.textContent = '?/100'
+            counterB.textContent = '?/100'
+            counterB.style.cssText =
+                'opacity: 0; pointer-events: none;'
 
-        /*abbrs.style.cssText =
-            'visibility: hidden;'*/
+            bList.style.cssText =
+                'opacity: 0; pointer-events: none;'
 
-        counterB.textContent = '?/100'
-        counterB.style.cssText =
-            'opacity: 0; pointer-events: none;'
+            Ip.style.cssText =
+                'border-left: 2px solid var(--colorWhite); border-right: 2px solid var(--colorWhite);'
+            Ip.textContent = '?'
+            
+            eIp.style.cssText =
+                'border-left: 2px solid var(--colorWhite); border-right: 2px solid var(--colorWhite);'
+            eIp.textContent = '?'
+            
+            rIp.style.cssText =
+                'border-left: 2px solid var(--colorWhite); border-right: 2px solid var(--colorWhite);'
+            rIp.textContent = '?'
+            
+            renderListIP()
 
-        bList.style.cssText =
-            'opacity: 0; pointer-events: none;'
+            setTimeout(function() {
+                alert('Lista apagada.')
+            }, 300)
+        } else {
+            renderListIP()
+        }
 
-        Ip.style.cssText =
-            'border-left: 2px solid var(--colorWhite); border-right: 2px solid var(--colorWhite);'
-        Ip.textContent = '?'
-        
-        eIp.style.cssText =
-            'border-left: 2px solid var(--colorWhite); border-right: 2px solid var(--colorWhite);'
-        eIp.textContent = '?'
-        
-        rIp.style.cssText =
-            'border-left: 2px solid var(--colorWhite); border-right: 2px solid var(--colorWhite);'
-        rIp.textContent = '?'
-        
-        renderListIP()
-
-        setTimeout(function() {
-            alert('Lista apagada.')
-        }, 300)
-    } else {
-        renderListIP()
+        resetLoadingBar()
+    } catch (error) {
+        alert('ERROR: ' + error.message);
     }
-
-    resetLoadingBar()
 }
 
 function getIP() {// CALL AN EXTERNAL API TO GET YOUR IP AND LOAD ALL THE FUNCTIONS
@@ -384,7 +412,6 @@ function getIP() {// CALL AN EXTERNAL API TO GET YOUR IP AND LOAD ALL THE FUNCTI
     
     fetch('https://api.ipify.org?format=json') 
     .then(response => response.json())
-    
     
     .then(data => {
         showIP(data.ip)
