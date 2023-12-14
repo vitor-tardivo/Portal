@@ -401,6 +401,8 @@ function confirmEraseListItens() {// CONFIRM ERASE ITENS OF THE LIST
         resetLoadingBar()
     } catch (error) {
         alert('ERROR: ' + error.message);
+
+        resetLoadingBar()
     }
 }
 
@@ -423,6 +425,8 @@ function getIP() {// CALL AN EXTERNAL API TO GET YOUR IP AND LOAD ALL THE FUNCTI
 
     .catch(error => {
         alert('ERROR: ' + error.message)
+
+        resetLoadingBar()
     })
 
 }
