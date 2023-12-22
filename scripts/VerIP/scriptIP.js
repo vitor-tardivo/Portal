@@ -209,13 +209,15 @@ function verifyRepeatedListIP(ip) {// VERIFY IF THE IP IS REPEATED WITH ANY ITEN
 function verifyEqualIPEnterListIp(ip) {// VERIFY IF THE IP IS EQUAL WITH THE PREVIOUS IP AND SHOW ON SCREEN
     try {
         let sIcon = document.querySelector('#saveIcon')
+        let iconS = document.querySelector('#iconSave')
         let Ip = document.querySelector('#IP')
         let eIp = document.querySelector('#equalIP')
         
         if (previousIp === null || previousIp !== ip) {
-            sIcon.textContent = 'SALVANDO'
             sIcon.style.cssText =
-                'color: var(--colorWhite); animation: borderBlink 0.3s linear infinite;'
+                'animation: borderBlink 0.3s linear infinite;'
+            iconS.style.cssText =
+                'opacity: 1;'
 
             eIp.style.cssText =
                 'border-left: 2px solid var(--colorWhite); border-right: 2px solid var(--colorWhite);'
@@ -238,9 +240,10 @@ function verifyEqualIPEnterListIp(ip) {// VERIFY IF THE IP IS EQUAL WITH THE PRE
             saveListIP(ip)
 
             setTimeout(function() {
-                sIcon.textContent = 'SALVADO'
                 sIcon.style.cssText =
-                    'color: rgb(110, 110, 110); animation: none;'
+                    'animation: none;'
+                iconS.style.cssText =
+                    'opacity: 0.5;'
             }, 300)
         } else {
             eIp.style.cssText =
@@ -339,8 +342,6 @@ function confirmEraseListItens() {// CONFIRM ERASE ITENS OF THE LIST
             
         let userConfirmation = confirm('Tem certeza de que deseja apagar a lista?\nsera apagada para sempre.')
             
-        let sIcon = document.querySelector('#saveIcon')
-            
         let counterT = document.querySelector('#counterTop')
 
         /*let abbrs = document.querySelector('.abbrS')*/
@@ -362,8 +363,6 @@ function confirmEraseListItens() {// CONFIRM ERASE ITENS OF THE LIST
             lIp = [] 
             
             localStorage.removeItem('ipList')
-
-            sIcon.textContent = '?'
 
             counterT.textContent = '?/100'
 

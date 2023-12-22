@@ -139,6 +139,7 @@
     }
 
     #IP, #equalIP, #equalRepeatedListIP {
+        border-radius: 13px;
         font-size: 3vw;
         margin: 13px 4px 13px 4px;
         transition: var(--configTrasition02s); 
@@ -149,11 +150,17 @@
     }
 
     #saveIcon {
-        padding: 5px 10px 7px 10px;
-        font-size: 3vw;
+        border-radius: 13px;
+        padding: 7px 10px 7px 10px;
+        transition: var(--configTrasition02s);
+    }
+    #iconSave {
+        width: 3.5vw;
+        transition: var(--configTrasition02s);
     }
 
     #counterTop, #counterBottom {
+        border-radius: 13px;
         font-size: 3vw;
     }
     #counterBottom {
