@@ -1,4 +1,4 @@
-# Portal(semifinished)
+# Portal(finished)
 A Portal with Ver IP and Multi Link softwares.
 
 Front End: HTML, CSS, JS.
@@ -20,7 +20,7 @@ Code JS done with assistance of Chat GPT.
 (no chat history of chat gpt)
 
 
-# Multi Link(semifinished)
+# Multi Link(finished)
 Paste links and open all of them just in time.
 
 Front End: HTML, CSS, JS.
