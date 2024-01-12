@@ -1,0 +1,199 @@
+@charset "UTF-8"; /* KEYBOARD CODE OF THE STYLIZATIONS CODE */
+
+@media print /* MEDIA QUERY PRINT */ {
+     body {
+          padding-bottom: 0px;
+     }
+     
+     #help, #scrollB, #scrollT, header, #open, #message, #pasteLinks, #titleLinks, #erase {
+          display: none;
+     }
+
+     #scrollB, #scrollT, footer {
+          background-color: rgba(0, 0, 0, 0);
+     }
+
+     #container {
+          width: 100%;
+     }
+     
+     #IP:hover, #equalIP:hover, #equalRepeatedListIP:hover, footer {
+          border-top: 2px solid rgba(0, 0, 0, 0);
+     }
+     
+     #listLinks > li > abbr > a, #by {
+          color: black;
+          text-shadow: 0px 0px 0px rgba(0, 0, 0, 0);
+     }
+     #listLinks > li > abbr > a {
+          font-size: 1em;
+     }
+
+     #erase, footer {
+          box-shadow: 0px 0px 0px rgba(0, 0, 0, 0);
+     }
+
+     
+     #erase {
+          border: 2px solid rgba(0, 0, 0, 0);
+     }
+     #erase, #scrollB, #scrollT {
+          color: rgba(0, 0, 0, 0);
+     }
+
+     footer {   
+          border-right: 0px solid rgba(0, 0, 0, 0);
+          position: unset;
+          opacity: 1;
+          visibility: visible;
+     }
+}
+
+@media screen and (max-width: 1050px) /* MEDIA QUERY SMALL SCREENS(phones) */ {
+     body {
+          padding-bottom: 90px;
+     }
+     
+     #scrollB, #scrollT {
+          padding: 0px 12px 10px 12px;
+          font-size: 10vw;
+          transition: var(--configTrasition02s);
+     }
+     #scrollB {
+          left: 9vw; /* left: 17.4vw; */
+          top: 680px; /*top: 160px;*/ /*top: 45vh;*/
+     }
+     #scrollT {
+          right: 9vw;
+          top: 680px; /*top: 45vh;*/
+     }
+     #scrollB:hover, #scrollT:hover {
+          color: var(--colorWhite);  
+     }
+     
+     header {
+          font-size: 2.7vw;
+     }
+     .navs {
+          margin: 0px 5px 0px 5px;
+          transition: var(--configTrasition02s);
+     }
+     #home {
+          transition: var(--configTrasition02s);
+     }
+     #home:hover {
+          color: var(--colorWhite);
+     }
+     #home:active {
+          color: var(--colorInteractionElements);
+     }
+     #home:focus {
+          outline: 1px solid rgba(255, 255, 255, 0);
+     }
+
+     #help {
+          top: 11.5vh;
+          padding: 5px;
+          font-size: 6vw;
+          transition: var(--configTrasition02s);
+     }
+     #help:hover {
+          outline: 2px solid rgba(255, 255, 255, 0);
+     }
+     #help:active {
+          outline: 2px solid var(--colorWhite);
+     }
+     #help:focus {
+          outline: 2px solid var(--colorWhite);
+     }
+
+     #open {
+          padding: 0px 10px 3px 10px;
+          font-size: 8vw; 
+          transition: var(--configTrasition02s);
+     }
+     #open:hover {
+          background-color: var(--colorWhite);
+          color: var(--colorBlack);
+          border: 2px solid var(--colorBlack);
+          transform: translate(0px, -10px);
+     }
+     #open:active {
+          background-color: var(--colorBlack);
+          color: var(--colorWhite);
+          border: 2px solid var(--colorWhite);
+          transform: translate(0px, 0px);
+     }
+     #open:focus {
+          border: 2px solid rgba(207, 44, 44, 0);
+          outline: 2px solid var(--colorWhite);
+     }
+
+     #container {
+          width: 97vw;
+     }
+     #message {
+          padding: 5px 15px 5px 15px;
+          font-size: 4vw;
+          transition: var(--configTrasition02s);
+     }
+     #pasteLinks {
+          line-height: 2em;
+          font-size: 2.5vw;
+          transition: border var(--configTrasition02s), outline var(--configTrasition02s), background-color var(--configTrasition02s);
+     }
+     #pasteLinks:hover {
+          background-color: var(--colorInteractionElements);
+     }
+     #pasteLinks:focus-within {
+          background-color: var(--colorWhite);
+          border: 2px solid rgba(255, 255, 255, 0);    
+          outline: 2px solid var(--colorWhite);
+     }
+     #titleLinks {
+          padding: 5px 15px 10px 15px;
+          font-size: 3vw;
+          transition: var(--configTrasition02s);
+      }
+     #listLinks > li > abbr > a {
+          font-size: 2.5vw;
+          transition: var(--configTrasition02s);
+     }
+     #listLinks > li > abbr > a:hover {
+          color: var(--colorInteractionElements);
+     }
+     #listLinks > li > abbr > a:active {
+          color: var(--colorInteractionElements);
+     }
+     #listLinks > li > abbr > a:focus {
+          border-radius: 50px;
+          outline: 1px solid var(--colorWhite);
+     }
+
+     #erase {
+          padding: 0px 12px 7px 12px;
+          font-size: 8vw;   
+          transition: var(--configTrasition03s);
+     }
+     #erase:hover {
+          background-color: var(--colorWhite);
+          border: 2px solid var(--colorBlack);
+          transform: translate(0px, 10px);
+     }
+     #erase:active {
+          background-color: var(--colorRed);
+          border: 2px solid var(--colorRed);
+          transform: translate(0px, 0px);
+     }
+     #erase:focus {
+          border: 2px solid rgba(207, 44, 44, 0);
+          outline: 2px solid var(--colorRed);
+     }
+  
+     footer {
+          font-size: 2.7vw;
+     }
+     #linklOuKo:focus {
+          outline: 1px solid rgba(255, 255, 255, 0);
+     }
+}
