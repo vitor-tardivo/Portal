@@ -1,7 +1,7 @@
 @charset "UTF-8"; /* KEYBOARD CODE OF THE STYLIZATIONS CODE */
 
 @media print /* MEDIA QUERY PRINT */ {
-    header {
+    header, footer {
         display: none;
     }
 
@@ -39,7 +39,7 @@
         opacity: 1;
         visibility: visible;
     }
-    #by {
+    #linkCredits {
         color: black;
     }
 }
@@ -93,9 +93,9 @@
     }
 
     footer {
-        font-size: 2.7vw;
+        font-size: 2.5vw;
     }
-    #linklOuKo:focus {
+    #linkCredits:focus {
         outline: 1px solid rgba(255, 255, 255, 0);
     }
 }
