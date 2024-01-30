@@ -93,6 +93,7 @@ main {
     background-color: var(--colorBlack);
     color: var(--colorWhite);
     border: 2px solid var(--colorWhite);
+    transform: translate(0px, 0px);
 }
 #open:active {
     background-color: var(--colorBlack);
