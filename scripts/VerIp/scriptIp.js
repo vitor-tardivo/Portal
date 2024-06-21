@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function () {// LOAD LOCAL STORAGE
             
             var link = document.createElement('link');
             link.rel = 'stylesheet';
-            link.href = '../styles/VerIP/mediaQueryIp.css';
+            link.href = '../styles/VerIp/mediaQueryIp.css';
             document.head.appendChild(link);
         } else {
             console.log('User is from a Desktop.');
