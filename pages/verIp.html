@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="shortcut icon" href="../midia/VerIp/faviconIp.png" type="image/x-icon"><!-- ICON TITLE PAGE-->
+    
+    <link rel="stylesheet" href="../styles/styleStandards.css"><!-- STANDARDS STYLIZATION -->
+    <link rel="stylesheet" href="../styles/VerIp/styleIp.css" media="all"><!-- ALL MEDIAS -->
+    <link rel="stylesheet" href="../styles/VerIp/mediaQueryIpPrint.css" media="print"><!-- MEDIA QUERY - PRINT -->
+    
+    <script src="../scripts/scriptStandards.js"></script><!-- STANDARDS SCRIPT -->
+    <script src="../scripts/VerIP/scriptIp.js"></script><!-- ALL THE SCRIPT -->
+    
+    <title>Ver IP</title>
+</head>
+<body>
+    <div id="barLoading"></div><!-- LOADING BAR -->
+
+    <abbr title="Ir ao fim da pagina"><button id="scrollB" onclick="bottomScroll()">&#9650;</button></abbr><!-- BUTTON GO TO THE BOTTOM OF THE PAGE -->
+    <abbr title="Ir ao topo da pagina"><button id="scrollT" onclick="topScroll()">&#9650;</button></abbr><!-- BUTTON GO TO THE TOP OF THE PAGE -->
+
+    <header>
+        <abbr title="Pagina principal Portal"><a id="home" href="../index.html" target="_self"><stronger>HOME</stronger></a></abbr><!-- HOME PAGE -->
+
+        <nav> 
+            <ul>
+                <abbr title="Pagina Ver IP"><li><a class="navs" href="#" target="_self"><stronger>VER IP</stronger></a></li></abbr><!-- VER IP PAGE -->
+                <abbr title="Pagina Multi Link"><li><a class="navs" href="multiLink.html" target="_blank"><stronger>MULTI LINK</stronger></a></li></abbr><!-- MULTI LINKS PAGE -->
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <abbr title="Ver o seu IP"><button id="see" onmouseenter="getBlue()" onmouseleave="getWhite()" onclick="getIP(max)"><stronger>VER</stronger></button></abbr><!-- BUTTON SEE IP AND MORE INFORMATION ABOUT -->    
+          
+        <div>
+            <abbr title="Seu IP"><span id="IP">?</span></abbr><!-- YOUR IP -->
+            <abbr title="Se seu IP mudou"><span id="equalIP">?</span></abbr><!-- IF YOUR IP HAS CHANGED -->
+            <abbr title="Se seu IP esta repetido com algum da lista"><span id="equalRepeatedListIP">?</span></abbr><!-- IF YOUR IP IS REPEATED WITH SOME ITENS OF THE LIST -->
+        </div>
+
+        <abbr title="Indicativo de salvamento dos itens na lista"><span id="saveIcon"><img id="iconSave" src="../midia/VerIP/iconVetorSave.png" alt="Save Icon"></span></abbr><!-- SAVE INDICATIVE ABOUT THE ITENS OF THE LIST TO THE LIST -->
+        
+        <abbr title="Contador da lista"><span id="counterTop"><strong>?/?</strong></span></abbr><!-- ITENS COUNTER TOP OF THE LIST -->
+            
+        <table> <!-- LIST -->
+            <caption title="Os items(data - hora, ip) serao salvos aqui"><stronger>Lista</stronger></caption>
+        
+            <thead>
+                <tr>
+                    <th title="Data e hora do momento salvo do item na lista" scope="col"><strong>Data - Horario</strong></th>
+                    <th title="Seu ip salvo na lista" scope="col"><strong>IP(s)</strong></th>
+                </tr>
+            </thead>
+        
+            <tbody title="Items">
+                <td>? - ?</td><!-- DATE - HOUR -->
+                <td>?</td><!-- IPS -->
+            </tbody>
+        </table>
+
+        <div>
+            <abbr class="abbrS" title="Contador da lista"><span id="counterBottom"><strong>?/?</strong></span></abbr><!-- ITENS COUNTER BOTTOM OF THE LIST -->
+        </div>
+
+        <div>
+            <abbr class="abbrS" title="Apaga todos os items da lista"><button id="erase" onclick="confirmEraseListItens(max)">Apagar</button></abbr><!-- BUTTON ERASE ITENS OF THE LIST -->
+        </div>
+    </main>
+
+    <footer>
+        <abbr title="Link perfil GitHub do criador"><p id="credits"><a href="https://github.com/vitor-tardivo" id="linkCredits" target="_blank">🔗GitHub</a></p></abbr><!-- SILLY CREDITS -->
+    </footer>
+</body>
+</html>

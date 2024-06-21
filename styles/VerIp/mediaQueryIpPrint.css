@@ -1,0 +1,75 @@
+@charset "UTF-8"; /* KEYBOARD CODE OF THE STYLIZATIONS CODE */
+
+@media print /* MEDIA QUERY PRINT */ {
+    body {
+        padding-bottom: 0px;
+    }
+
+    #scrollB, #scrollT, footer {
+        background-color: rgba(0, 0, 0, 0);
+    }
+
+    #scrollB, #scrollT, header, #see, #saveIcon, #erase, #counterBottom, footer {
+        display: none;
+    }
+
+    #IP, #equalIP, #equalRepeatedListIP{
+        font-size: 1.5em;
+    }
+    
+    #IP:hover, #equalIP:hover, #equalRepeatedListIP:hover, footer {
+        border-top: 2px solid rgba(0, 0, 0, 0);
+    }
+    
+    #counterTop, #counterBottom, #counterTop:hover, #counterBottom:hover {
+        border: 2px solid black;
+    }
+    
+    #IP, #equalIP, #equalRepeatedListIP, table, caption, #counterTop, #counterBottom, #erase, footer {
+        box-shadow: 0px 0px 0px rgba(0, 0, 0, 0);
+    }
+
+    #IP, #equalIP, #equalRepeatedListIP, #counterTop, table, #counterBottom, #linkCredits {
+        color: black;
+    }
+    
+    #counterTop, #counterBottom {
+        font-size: 1.7em;
+    }
+
+    caption {
+        border: 1px solid rgba(0, 0, 0, 0);
+    }
+    caption{
+        font-size: 3em;
+    }
+    th {
+        position: unset;
+        top: 0px;
+        width: 55vw;
+        font-size: 2.5em;
+    }
+    td {
+        background-color: rgba(255, 255, 255, 0);
+        font-size: 1.4em;
+    }
+
+    td {
+        text-shadow: 0px 0px 0px rgba(0, 0, 0, 0);
+    }
+    
+    #erase {
+        border: 2px solid rgba(0, 0, 0, 0);
+    }
+
+    #erase, #scrollB, #scrollT {
+        color: rgba(0, 0, 0, 0);
+    }
+
+    footer {   
+        border-right: 0px solid rgba(0, 0, 0, 0);
+        position: unset;
+        opacity: 1;
+        visibility: visible;
+    }
+}

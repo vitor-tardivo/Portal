@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="shortcut icon" href="../midia/MultiLink/faviconMl.png" type="image/x-icon"><!-- ICON TITLE PAGE-->
+    
+    <link rel="stylesheet" href="../styles/styleStandards.css"><!-- STANDARDS STYLIZATION -->
+    <link rel="stylesheet" href="../styles/MultiLink/styleMl.css" media="all"><!-- ALL MEDIAS -->
+    <link rel="stylesheet" href="../styles/MultiLink/mediaQueryMlPrint.css" media="print"><!-- MEDIA QUERY - PRINT -->
+    
+    <script src="../scripts/scriptStandards.js"></script><!-- STANDARDS SCRIPT -->
+    <script src="../scripts/MultiLink/scriptMl.js"></script><!-- ALL THE SCRIPT -->
+    
+    <title>Multi Link</title>
+</head>
+<body>
+    <div id="barLoading"></div><!-- LOADING BAR -->
+
+    <abbr title="Ajuda"><a id="help" href="multiLinkHelp.html" target="_blank">❗️</a></abbr><!-- HELP PAGE -->
+
+    <abbr title="Ir ao fim da pagina"><button id="scrollB" onclick="bottomScroll()">&#9650;</button></abbr><!-- BUTTON GO TO THE BOTTOM OF THE PAGE -->
+    <abbr title="Ir ao topo da pagina"><button id="scrollT" onclick="topScroll()">&#9650;</button></abbr><!-- BUTTON GO TO THE TOP OF THE PAGE -->
+
+    <header>
+        <abbr title="Pagina principal Portal"><a id="home" href="../index.html" target="_self"><stronger>HOME</stronger></a></abbr><!-- HOME PAGE -->
+
+        <nav> 
+            <ul>
+                <abbr title="Pagina Ver IP"><li><a class="navs" href="verIp.html" target="_blank"><stronger>VER IP</stronger></a></li></abbr><!-- VER IP PAGE -->
+                <abbr title="Pagina Multi Link"><li><a class="navs" href="#" target="_self"><stronger>MULTI LINK</stronger></a></li></abbr><!-- MULTI LINKS PAGE -->
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <abbr title="Abre os multiplos links"><button id="open" onclick="openLinks()"><stronger>ABRIR</stronger></button></abbr><!-- BUTTON OPEN THE PASTED LINKS -->
+
+        
+        <div id="container">
+            <abbr title="Mensagem"><p id="message">...</p></abbr><!-- MESSAGE -->
+
+            <abbr title="Cole seus Links aqui"><textarea id="pasteLinks" rows="10" placeholder="Cole seus Links aqui" onclick="showInicialMessage()" onfocus="showInicialMessage()"></textarea></abbr><!-- PASTE AREA -->
+            
+            <abbr title="Lista dos links colados"><p id="titleLinks">Lista Links</p></abbr>
+            
+            <aside><!-- SHOW LINKS AREA -->
+                <ul id="listLinks">
+                    <!-- LIST LINKS PASTED -->
+                </ul>
+            </aside>
+        </div>
+
+        <div>
+            <abbr class="abbrS" title="Apaga todos os links da lista"><button id="erase" class="butao" onclick="eraseListLinks()">Apagar</button></abbr><!-- BUTTON ERASE ITENS OF THE LIST LINKS -->
+        </div>
+    </main>
+
+    <footer>
+        <abbr title="Link perfil GitHub do criador"><p id="credits"><a href="https://github.com/vitor-tardivo" id="linkCredits" target="_blank">🔗GitHub</a></p></abbr><!-- SILLY CREDITS -->
+    </footer>
+</body>
+</html>

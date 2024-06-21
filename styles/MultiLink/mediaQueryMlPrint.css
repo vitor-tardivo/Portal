@@ -1,0 +1,53 @@
+@charset "UTF-8"; /* KEYBOARD CODE OF THE STYLIZATIONS CODE */
+
+@media print /* MEDIA QUERY PRINT */ {
+    body {
+         padding-bottom: 0px;
+    }
+    
+    #help, #scrollB, #scrollT, header, #open, #message, #pasteLinks, #titleLinks, #erase, footer {
+         display: none;
+    }
+
+    #scrollB, #scrollT, footer {
+         background-color: rgba(0, 0, 0, 0);
+    }
+
+    #container {
+         width: 100%;
+    }
+    
+    #IP:hover, #equalIP:hover, #equalRepeatedListIP:hover, footer {
+         border-top: 2px solid rgba(0, 0, 0, 0);
+    }
+    
+    #listLinks > li > abbr > a {
+         color: black;
+         text-shadow: 0px 0px 0px rgba(0, 0, 0, 0);
+    }
+    #listLinks > li > abbr > a {
+         font-size: 1em;
+    }
+
+    #erase, footer {
+         box-shadow: 0px 0px 0px rgba(0, 0, 0, 0);
+    }
+
+    
+    #erase {
+         border: 2px solid rgba(0, 0, 0, 0);
+    }
+    #erase, #scrollB, #scrollT {
+         color: rgba(0, 0, 0, 0);
+    }
+
+    footer {   
+         border-right: 0px solid rgba(0, 0, 0, 0);
+         position: unset;
+         opacity: 1;
+         visibility: visible;
+    }
+    #linkCredits {
+         color: black;
+    }
+}

@@ -1,0 +1,21 @@
+@charset "UTF-8"; /* KEYBOARD CODE OF THE STYLIZATIONS CODE */
+
+/* MEDIA QUERY SMALL SCREENS(phones) */
+header {
+    font-size: 2.7vw;
+}
+.navs {
+    margin: 0px 5px 0px 5px;
+    transition: var(--configTrasition02s);
+}
+#home {
+    transition: var(--configTrasition02s);
+}
+
+#porEnquanto {
+    font-size: 6vw;
+}
+
+footer {
+    font-size: 2.5vw;
+}

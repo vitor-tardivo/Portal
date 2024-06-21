@@ -1,0 +1,99 @@
+@charset "UTF-8"; /* KEYBOARD CODE OF THE STYLIZATIONS CODE */
+
+/* MEDIA QUERY SMALL SCREENS(phones) */
+body {
+    padding-bottom: 4px;
+}
+
+#scrollB, #scrollT {
+    padding: 0px 12px 10px 12px;
+    font-size: 10vw;
+    transition: var(--configTrasition02s);
+}
+#scrollB {
+    left: 9vw; /* left: 17.4vw; */
+    top: 525px; /*top: 160px;*/ /*top: 45vh;*/
+}
+#scrollT {
+    right: 9vw;
+    top: 525px; /*top: 45vh;*/
+}
+
+
+header {
+    font-size: 2.7vw;
+}
+.navs {
+    margin: 0px 5px 0px 5px;
+    transition: var(--configTrasition02s);
+}
+#home {
+    transition: var(--configTrasition02s);
+}
+
+#see {
+    padding: 0px 11px 2px 11px;
+    font-size: 8vw;
+    transition: var(--configTrasition02s);
+}
+#see:focus {
+    background-color: var(--colorWhite);
+    color: var(--colorBlack);
+    border: 2px solid rgba(30, 30, 170, 0);
+    outline: 2px solid var(--colorBlue);
+    transform: translate(0px, -10px);
+}
+
+#IP, #equalIP, #equalRepeatedListIP {
+    border-radius: 13px;
+    font-size: 3vw;
+    margin: 13px 4px 13px 4px;
+    transition: var(--configTrasition02s); 
+}
+
+#saveIcon {
+    border-radius: 13px;
+    padding: 7px 10px 7px 10px;
+    transition: var(--configTrasition02s);
+}
+#iconSave {
+    width: 3.5vw;
+    transition: var(--configTrasition02s);
+}
+
+#counterTop, #counterBottom {
+    border-radius: 13px;
+    font-size: 3vw;
+}
+#counterBottom {
+    margin-bottom: 10px;
+}
+
+caption {
+    font-size: 6vw;
+}
+th {
+    font-size: 4vw;
+    width: 45vw;
+}
+td {
+    font-size: 3vw;
+}
+
+#erase {
+    padding: 3px 15px 10px 15px;
+    margin: 0px 0px 84px 0px;
+    font-size: 8vw;
+    transition: var(--configTrasition02s);
+}
+#erase:focus {
+    background-color: var(--colorWhite);
+    color: var(--colorBlack);
+    border: 2px solid rgba(207, 44, 44, 0);
+    outline: 2px solid var(--colorRed);
+    transform: translate(0px, -10px);
+}
+
+footer {
+    font-size: 2.7vw;
+}

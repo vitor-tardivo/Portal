@@ -1,0 +1,102 @@
+@charset "UTF-8"; /* KEYBOARD CODE OF THE STYLIZATIONS CODE */
+
+/* BODY STYLIZATION */
+body {
+    background-color: var(--colorWhite);
+}
+
+/* HEADER STYLIZATION */
+header {
+    /*border-radius: 0px 0px 0px 0px;*/
+    margin-bottom: 0px;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    place-items: center;
+}
+
+#container {
+    margin: 0px 0px 0px 0px;
+    padding: 50px 50px 50px 50px;
+    line-height: 2.2vw;
+    width: 75vw;
+}
+h1 {
+    box-sizing: border-box;
+    margin: 0px 0px 5.5vh 0px;
+    padding: 7px;
+    text-align: center;
+    font-size: 4.5vw;
+    font-family: var(--fontDisplay);
+    word-wrap: break-word;
+}
+h2 {
+    box-sizing: border-box;
+    margin: 5.5vh 0px 2vh 0px;
+    padding: 7px;
+    text-align: center;
+    font-size: 3vw;
+    font-family: var(--fontDisplay);
+    word-wrap: break-word;
+}
+#subTitle {
+    color: var(--colorBlack);
+    box-sizing: border-box;
+    margin: 2vh 0px 2vh 0px;
+    padding: 7px;
+    font-size: 2vw;
+    font-family: var(--fontDisplay);
+    word-wrap: break-word;
+}
+#list {
+    margin: 2vh 0px 0px 7vw;
+}
+.tips {
+    box-sizing: border-box;
+    color: var(--colorBlack);
+    padding: 7px;
+    font-size: 1.5vw;
+    font-family: var(--fontSerif);
+    word-wrap: break-word;
+    list-style-type: decimal;
+}
+
+/* FOOTER STYLIZATION */
+footer {
+    display: block;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--colorContrast);
+    border-top: 2px solid var(--colorBlack);
+    border-radius: 0px 0px 0px 0px;
+    box-shadow: -2px -2px 10px var(--colorShadow);
+    padding: 7px;
+    text-align: center;
+    font-size: 1vw;
+    transition: var(--configTrasition03s);
+}
+/* CREDITS STYLIZATION */
+#credits {
+    padding: 7px 0px 0px 0px;
+}
+#linkCredits {
+    color: var(--colorWhite);
+    font-family: 'Borel', cursive;
+    outline: 1px solid rgba(0, 0, 0, 0);
+    text-decoration: none;
+    transition: var(--configTrasition03s);
+}
+#linkCredits:hover {
+    color: var(--colorInteractionElements);
+}
+#linkCredits:active {
+    color: var(--colorInteractionElements);
+}
+#linkCredits:focus {
+    color: var(--colorInteractionElements);
+}

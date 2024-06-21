@@ -1,0 +1,91 @@
+@charset "UTF-8"; /* KEYBOARD CODE OF THE STYLIZATIONS CODE */
+
+/* MEDIA QUERY SMALL SCREENS(phones) */
+body {
+     padding-bottom: 90px;
+}
+
+#scrollB, #scrollT {
+     padding: 0px 12px 10px 12px;
+     font-size: 10vw;
+     transition: var(--configTrasition02s);
+}
+#scrollB {
+     left: 9vw; /* left: 17.4vw; */
+     top: 525px; /*top: 160px;*/ /*top: 45vh;*/
+}
+#scrollT {
+     right: 9vw;
+     top: 525px; /*top: 45vh;*/
+}
+
+header {
+     font-size: 2.7vw;
+}
+.navs {
+     margin: 0px 5px 0px 5px;
+     transition: var(--configTrasition02s);
+}
+#home {
+     transition: var(--configTrasition02s);
+}
+
+#help {
+     top: 12.7vh;
+     padding: 5px;
+     font-size: 6vw;
+     transition: var(--configTrasition02s);
+}
+
+#open {
+     padding: 0px 10px 3px 10px;
+     font-size: 8vw; 
+     transition: var(--configTrasition02s);
+}
+#open:focus {
+     background-color: var(--colorWhite);
+     color: var(--colorBlack);
+     border: 2px solid rgba(207, 44, 44, 0);
+     outline: 2px solid var(--colorWhite);
+     transform: translate(0px, -10px);
+}
+
+#container {
+     width: 97vw;
+}
+#message {
+     padding: 5px 15px 5px 15px;
+     font-size: 4vw;
+     transition: var(--configTrasition02s);
+}
+#pasteLinks {
+     line-height: 2em;
+     font-size: 2.5vw;
+     transition: border var(--configTrasition02s), outline var(--configTrasition02s), background-color var(--configTrasition02s);
+}
+#titleLinks {
+     padding: 5px 15px 10px 15px;
+     font-size: 3vw;
+     transition: var(--configTrasition02s);
+     }
+#listLinks > li > abbr > a {
+     font-size: 2.5vw;
+     transition: var(--configTrasition02s);
+}
+
+#erase {
+     padding: 0px 12px 7px 12px;
+     font-size: 8vw;   
+     transition: var(--configTrasition03s);
+}
+#erase:focus {
+     background-color: var(--colorWhite);
+     color: var(--colorBlack);
+     border: 2px solid rgba(207, 44, 44, 0);
+     outline: 2px solid var(--colorRed);
+     transform: translate(0px, -10px);
+}
+
+footer {
+     font-size: 2.7vw;
+}

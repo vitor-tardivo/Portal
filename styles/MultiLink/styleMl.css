@@ -1,0 +1,286 @@
+@charset "UTF-8"; /* KEYBOARD CODE OF THE STYLIZATIONS CODE */
+
+/* BODY STYLIZATION */
+body {
+    padding-bottom: 95px;
+    /*height: 100vw; /*<- dev*/
+    /*width: 100vw; /*<- dev*/
+    transition: var(--configTrasition03s);
+}
+
+/* LOADING BAR STYLIZATION */
+#barLoading {
+    height: 0px;
+    width: 100vw;
+    visibility: hidden;
+    transition: var(--configTrasition03s);
+}
+
+/* LINK HELP STYLIZATION */
+#help {
+    background-color: rgba(231, 231, 231, 0.329);
+    position: fixed;
+    top: 46.5vh;
+    right: 20px;
+    border: 2px solid rgba(0, 0, 0, 0);
+    border-radius: 50px;
+    outline: 2px solid rgba(0, 0, 0, 0);
+    font-size: 2vw;
+    transition: var(--configTrasition03s);
+}
+#help:hover {
+    outline: 2px solid var(--colorWhite);
+}
+#help:active {
+    outline: 2px solid var(--colorWhite);
+}
+#help:focus {
+    outline: 2px solid var(--colorWhite);
+}
+
+/* BUTTONS SCROLLS STYLIZATION */
+#scrollB, #scrollT {
+    position: fixed;
+    z-index: 2000;
+    /*bottom: 160px;*/ top: 45vh;
+    padding: 0px 7px 5px 7px;
+    font-size: 3.7vw;
+    transition: var(--configTrasition03s);
+}
+#scrollB {
+    display: inline-block;
+    /*left: 31.6vw;*/ left: 8.5vw;
+    pointer-events: none;
+    visibility: hidden;
+    transform: scaleY(-1);
+    opacity: 0;
+}
+#scrollT{
+    display: inline-block;
+    /*right: 31.6vw;*/ right: 8.5vw;
+    pointer-events: none;
+    visibility: hidden;
+    opacity: 0;
+}
+
+/* HEADER STYLIZATION */
+header {
+    border-radius: 0px 0px 0px 0px;
+}
+
+/* MAIN STYLIZATION */
+main {
+    display: flex;
+    flex-direction: column;
+    place-items: center;
+}
+
+/* BUTTON OPEN STYLIZATION */
+#open {
+    display: inline-block;
+    background-color: var(--colorWhite);
+    color: var(--colorBlack);
+    border: 2px solid var(--colorBlack);
+    outline: 2px solid rgba(0, 0, 0, 0);
+    box-shadow: 2px 2px 10px var(--colorShadow);
+    margin: 0px 0px 0px 0px;
+    padding: 0px 20px 3px 20px;
+    font-size: 3.5vw;
+    cursor: pointer;
+    transform: translate(0px, -10px);    
+    transition: var(--configTrasition03s);
+}
+#open:hover {
+    background-color: var(--colorBlack);
+    color: var(--colorWhite);
+    border: 2px solid var(--colorWhite);
+    transform: translate(0px, 0px);
+}
+#open:active {
+    background-color: var(--colorBlack);
+    color: var(--colorWhite);
+    border: 2px solid var(--colorWhite);
+    transform: translate(0px, 0px);
+}
+#open:focus {
+    border: 2px solid rgba(207, 44, 44, 0);
+    outline: 2px solid var(--colorWhite);
+}
+
+#container {
+    width: 55vw;
+    box-sizing: border-box;
+}
+
+/* MESSAGE STYLIZATION */
+#message {
+    background-color: var(--colorContrast);
+    color: var(--colorWhite);
+    border: 2px solid var(--colorBlack);
+    border-radius: 15px 15px 5px 5px;
+    outline: 2px solid rgba(0, 0, 0, 0);
+    box-shadow: 2px 2px 10px var(--colorShadow);
+    box-sizing: border-box;
+    margin: 13px 0px 0px 0px;
+    padding: 5px 15px 10px 15px;
+    text-align: center;
+    font-weight: normal;
+    font-size: 1.4vw;
+    font-family: var(--fontDisplay);
+    word-wrap: break-word;
+    cursor: help;
+    pointer-events: none;
+    transition: var(--configTrasition03s);
+}
+
+/* PASTE LINKS AREA STYLIZATION */
+#pasteLinks {
+    resize: vertical;
+    color: var(--colorBlack) !important;
+    background-color: var(--colorInteractionElements);
+    border: 2px solid var(--colorBlack);
+    border-radius: 5px 5px 15px 15px;
+    outline: 2px solid rgba(0, 0, 0, 0);
+    box-shadow: 2px 2px 10px var(--colorShadow);
+    box-sizing: border-box;
+    padding: 7px;
+    line-height: 2em;
+    width: 100%;
+    font-size: 1vw;
+    font-family: var(--fontMonoSerif);
+    transition: border var(--configTrasition03s), outline var(--configTrasition03s), background-color var(--configTrasition03s);
+}
+#pasteLinks::placeholder {
+    color: rgb(100, 100, 100);
+}
+#pasteLinks:hover {
+    background-color: var(--colorWhite);
+}
+#pasteLinks:focus-within {
+    background-color: var(--colorWhite);
+    border: 2px solid rgba(255, 255, 255, 0);    
+    outline: 2px solid var(--colorWhite);
+}
+
+/* TITLE LIST LINKS STYLIZATION */
+#titleLinks {
+    display: block;
+    background-color: var(--colorContrast);
+    color: var(--colorWhite);
+    border: 2px solid var(--colorBlack);
+    border-radius: 5px 5px 5px 5px;
+    box-shadow: 2px 2px 10px var(--colorShadow);
+    outline: 2px solid rgba(0, 0, 0, 0);
+    box-sizing: border-box;
+    margin: 0px 0px 0px 0px;
+    padding: 10px 15px 10px 15px;
+    text-align: center;
+    font-weight: normal;
+    font-size: 1.2vw;
+    font-family: var(--fontDisplay);
+    cursor: help;
+    pointer-events: none;
+    opacity: 0;
+    visibility: hidden;
+    transition: var(--configTrasition03s);
+}
+
+/* LIST LINKS STYLIZATION */
+#listLinks {
+    flex-direction: column;
+}
+#listLinks > li {
+    border-bottom: 1px solid var(--colorInteractionElements);
+    box-sizing: border-box;
+    padding: 15px;
+}
+#listLinks > li > abbr > a {
+    color: var(--colorWhite);
+    outline: 1px solid rgba(0, 0, 0, 0);
+    text-shadow: 2px 2px 4px var(--colorShadow);
+    font-size: 0.9vw;
+    font-family: var(--fontMonoSerif);
+    word-wrap: break-word;
+    transition: var(--configTrasition03s);
+}
+#listLinks > li > abbr > a:hover {
+    color: var(--colorInteractionElements);
+}
+#listLinks > li > abbr > a:active {
+    color: var(--colorInteractionElements);
+}
+#listLinks > li > abbr > a:focus {
+    color: var(--colorInteractionElements);
+}
+
+/* BUTTON ERASE STYLIZATION */
+#erase {
+    display: inline-block;
+    background-color: var(--colorWhite);
+    color: var(--colorBlack);
+    border: 2px solid var(--colorBlack);
+    outline: 2px solid rgba(0, 0, 0, 0);
+    margin: 13px 0px 0px 0px;
+    padding: 0px 17px 10px 17px;
+    font-size: 3.5vw;
+    cursor: pointer;
+    opacity: 0;
+    pointer-events: none;
+    transform: translate(0px, 10px);    
+    transition: var(--configTrasition03s);
+}
+#erase:hover {
+    background-color: var(--colorRed);
+    border: 2px solid var(--colorRed);
+    transform: translate(0px, 0px);
+}
+#erase:active {
+    background-color: var(--colorRed);
+    border: 2px solid var(--colorRed);
+    transform: translate(0px, 0px);
+}
+#erase:focus {
+    border: 2px solid rgba(207, 44, 44, 0);
+    outline: 2px solid var(--colorRed);
+}
+
+/* FOOTER STYLIZATION */
+footer {
+    display: block;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--colorContrastOpacity);
+    border-top: 2px solid var(--colorBlack);
+    border-right: 2px solid var(--colorBlack);
+    border-radius: 0px 0px 0px 0px;
+    box-shadow: -2px -2px 10px var(--colorShadow);
+    padding: 7px;
+    text-align: center;
+    font-size: 1vw;
+    opacity: 0;
+    visibility: hidden;
+    transition: var(--configTrasition03s);
+}
+/* CREDITS STYLIZATION */
+#credits {
+    padding: 7px 0px 0px 0px;
+}
+#linkCredits {
+    color: var(--colorWhite);
+    font-family: 'Borel', cursive;
+    outline: 1px solid rgba(0, 0, 0, 0);
+    text-decoration: none;
+    transition: var(--configTrasition03s);
+}
+#linkCredits:hover {
+    color: var(--colorInteractionElements);
+}
+#linkCredits:active {
+    color: var(--colorInteractionElements);
+}
+#linkCredits:focus {
+    color: var(--colorInteractionElements);
+}

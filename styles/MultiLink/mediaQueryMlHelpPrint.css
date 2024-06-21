@@ -1,0 +1,45 @@
+@charset "UTF-8"; /* KEYBOARD CODE OF THE STYLIZATIONS CODE */
+
+@media print /* MEDIA QUERY PRINT */ {
+    header, footer {
+        display: none;
+    }
+
+    #container {
+        margin: 0px 0px 65px 0px;
+        padding: 20px 20px 20px 20px;
+        width: 100vw;
+        line-height: 4vw;
+    }
+    h1 {
+        margin: 0px 0px 3vh 0px;
+        font-size: 9vw;
+    }
+    h2 {
+        margin: 3vh 0px 0.5vh 0px;
+        font-size: 5vw;
+    }
+    #subTitle {
+        margin: 0.5vh 0px 1.5px 0px;
+        font-size: 3vw;
+    }
+    #list {
+        margin: 1.5px 0px 0px 9vw;
+    }
+    .tips {
+        color: var(--colorBlack);
+        padding: 7px;
+        font-size: 2.7vw;
+    }
+
+    footer {
+        border: 2px solid rgba(0, 0, 0, 0);
+        box-shadow: -2px -2px 10px rgba(0, 0, 0, 0);
+        position: unset;
+        opacity: 1;
+        visibility: visible;
+    }
+    #linkCredits {
+        color: black;
+    }
+}

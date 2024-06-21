@@ -1,0 +1,44 @@
+@charset "UTF-8"; /* KEYBOARD CODE OF THE STYLIZATIONS CODE */
+
+/* MEDIA QUERY SMALL SCREENS(phones) */
+header {
+    font-size: 2.7vw;
+}
+.navs {
+    margin: 0px 5px 0px 5px;
+    transition: var(--configTrasition02s);
+}
+#home {
+    transition: var(--configTrasition02s);
+}
+
+#container {
+    margin: 0px 0px 65px 0px;
+    padding: 20px 20px 20px 20px;
+    width: 95vw;
+    line-height: 4vw;
+}
+h1 {
+    margin: 0px 0px 2vh 0px;
+    font-size: 9vw;
+}
+h2 {
+    margin: 2vh 0px 0.5vh 0px;
+    font-size: 5vw;
+}
+#subTitle {
+    margin: 0.5vh 0px 0.5px 0px;
+    font-size: 3vw;
+}
+#list {
+    margin: 0.5px 0px 0px 9vw;
+}
+.tips {
+    color: var(--colorBlack);
+    padding: 7px;
+    font-size: 2.7vw;
+}
+
+footer {
+    font-size: 2.5vw;
+}
