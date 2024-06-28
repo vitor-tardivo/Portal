@@ -64,15 +64,15 @@ body {
         border: 2px solid var(--colorWhite);
     }
 }
-/* ABBR STYLIZATION */
+/* abbr STYLIZATION */
 abbr {
     text-decoration: none;
 }
-/* A STYLIZATION */
+/* a STYLIZATION */
 a {
     text-decoration: none;
 }
-/* A STYLIZATION */
+/* li STYLIZATION */
 li {
     text-decoration: none;
 }
